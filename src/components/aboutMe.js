@@ -7,7 +7,10 @@ import Markdown from "./markdown";
 
 const useStyles = makeStyles(() => ({
     root: {
-        padding: "120px"
+        display: "flex",
+        paddingTop: "120px",
+        justifyContent: "center",
+        // alignItems: "center"
     }
 }))
 

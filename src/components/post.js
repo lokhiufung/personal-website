@@ -12,7 +12,10 @@ const finPostBySlug = (slug) => {
 
 const useStyles = makeStyles(() => ({
     root: {
-        padding: "120px",
+        display: "flex",
+        paddingTop: "10%",
+        justifyContent: "center",
+        // alignItems: "center"
     }
 }))
 
@@ -23,7 +26,7 @@ export default function Post() {
     });
 
     const classes = useStyles();
-    
+
     var {slug} = useParams();
     const postData = finPostBySlug(slug);
     

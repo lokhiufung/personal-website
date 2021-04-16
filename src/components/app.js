@@ -7,14 +7,6 @@ import Header from "./header";
 import Body from "./body";
 // import Footer from "./footer";
 
-const useStyles = makeStyles(() => ({
-    header: {
-        marginBottom: "auto",
-    },
-    body: {
-        padding: "120px",
-    },
-}))
 
 
 const theme = createMuiTheme({
@@ -26,14 +18,13 @@ const theme = createMuiTheme({
 
 
 export default function App() {
-    const {body} = useStyles();
 
     return (
         <ThemeProvider theme={theme}>
             <BrowserRouter>
                 <React.Fragment className="App">
                     <Header/>
-                    <Body className={body}/>
+                    <Body />
                 </React.Fragment>
             </BrowserRouter>
         </ThemeProvider>

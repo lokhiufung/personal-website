@@ -1,24 +1,10 @@
-# About me
+<!-- <div> -->
+<!-- <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Sai_Kung_Town_Aerial_View_201706.jpg" alt="drawing" width="100%" height="40%"/> -->
+<!-- </div> -->
 
-#### Feb 25, 2021 by [Einstein Lok](/)
+# About
 
-## Introduction
+I am an AI Application Developer currently working in [IMIMR Systems Limited](https://www.imimr.biz). I completed my bachelor degree in Mathematics in the [Hong Kong University of Science and Technology](https://hkust.edu.hk). I'm interested in natural language understanding and human-machine communication. I am currently working on building a voice chatbot in IMIMR. I research and experiment with deep learning models in automatic speech recognition, text to speech, question and answering. I mainly focus on models for cantonese (main language in Hong Kong). 
 
-<!-- ### Sub-heading
 
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-### Sub-heading -->
-## Education
-### Hong Kong University of Science and Technology
-- Bachelor of Science in Mathematics (Statistics and Finanical Mathematics); 2nd class upper honor
-- Courses Taken:
-    - Statistics
-        - Regression Anaylsis
-        - Non-parametric Statistics
-        - Stochastic Modeling
-        - Statistical Inference
-
-## Work Experience
-### AI Application Developer (Jun, 2019 - Now)
-- Company: [IMIMR Systems Limited](https://www.imimr.biz)
+#### April, 8, 2021 by [Hiu Fung Lok](/)

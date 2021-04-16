@@ -9,14 +9,14 @@ const options = {
             component: Typography,
             props: {
                 gutterBottom: true,
-                variant: "h5",
+                variant: "h2",
             },
         },
         h2: {
             component: Typography,
             props: {
                 gutterBottom: true,
-                variant: "h6",
+                variant: "h3",
             },
         },
         h3: {

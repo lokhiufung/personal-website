@@ -13,6 +13,7 @@ export default function Body() {
             <Route path="/aboutMe" exact component={AboutMe}/>
             <Route path="/blog" component={Blog}/>
             <Route path="/post/:slug" component={Post}/>
+            <Route path="/" component={AboutMe}/>
         </Switch>
     )
 }

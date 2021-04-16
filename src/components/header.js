@@ -4,6 +4,7 @@ import {makeStyles, AppBar, Toolbar, Button, Typography} from "@material-ui/core
 import {Link} from "react-router-dom"
 import React from "react"
 
+
 const headersData = [
 	{
 		label: "About me",
@@ -13,10 +14,10 @@ const headersData = [
 		label: "Blog",
 		href: "/blog"
 	},
-	{
-		label: "contact",
-		href: "/contact"
-	}
+	// {
+	// 	label: "contact",
+	// 	href: "/contact"
+	// }
 ];
 
 
@@ -59,7 +60,7 @@ export default function Header() {
 	
 	const myLogo = (
 		<Typography variant="h6" component="h1" className={logo}>
-			My Page
+			Hiu Fung Lok
 		</Typography>
 	);
 
