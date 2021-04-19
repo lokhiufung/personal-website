@@ -22,6 +22,7 @@ const useStyles = makeStyles(() => ({
     // },
     gridListTile: {
         justifyContent: "center",
+        // display: "inline-flex"
         // borderBottom: "1px solid black"
     }
 }))
