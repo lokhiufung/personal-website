@@ -5,6 +5,7 @@
 # About
 
 I am an AI Application Developer currently working in [IMIMR Systems Limited](https://www.imimr.biz). I completed my bachelor degree in Mathematics in the [Hong Kong University of Science and Technology](https://hkust.edu.hk). I'm interested in natural language understanding and human-machine communication. I am currently working on building a voice chatbot in IMIMR. I research and experiment with deep learning models in automatic speech recognition, text to speech, question and answering. I mainly focus on models for cantonese (main language in Hong Kong).
+
 Personally, I am also interested in artificial general intelligence. The way that DeepMind builds artificial intelligence (combining neural science with artificial intelligence) inspires me a lot in understanding machine learning models. 
 
 

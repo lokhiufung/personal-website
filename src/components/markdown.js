@@ -23,7 +23,7 @@ const options = {
             component: Typography,
             props: {
                 gutterBottom: true,
-                variant: "subtitle1",
+                variant: "h5",
             },
         },
         h4: {
