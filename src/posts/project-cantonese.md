@@ -1,4 +1,4 @@
-# Project Cantonese
+# Difficulties in building voice assistant for HongKongers
 
 ## Background
 This is the biggest work I have been doing in IMIMR. Our company has been working on building a virtual assistant which is capable of undestanding cantonese. (Almost everyone speaks canotonese in Hong Kong)

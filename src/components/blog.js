@@ -74,7 +74,7 @@ export default function Blog() {
                                         {/* <Link to={"/post/" + postData.slug}> */}
                                             <CardMedia
                                                 className={classes.media}
-                                                image="https://source.unsplash.com/random"
+                                                image={postData.imageUrl}
                                             />
                                             <CardContent>
                                                 <Typography gutterBottom variant="h5" component="h2">

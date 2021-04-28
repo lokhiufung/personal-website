@@ -15,6 +15,7 @@ const finPostBySlug = (slug) => {
 const useStyles = makeStyles((theme) => ({
     postContainer: {
         paddingTop: theme.spacing(10),
+        paddingBottom: theme.spacing(10)
     }
 }))
 

@@ -10,6 +10,7 @@ const options = {
             props: {
                 gutterBottom: true,
                 variant: "h3",
+                align: "center"
             },
         },
         h2: {
@@ -17,6 +18,7 @@ const options = {
             props: {
                 gutterBottom: true,
                 variant: "h4",
+                align: "center"
             },
         },
         h3: {
@@ -32,6 +34,15 @@ const options = {
                 gutterBottom: true,
                 variant: "caption",
                 paragraph: true
+            },
+        },
+        h5: {
+            component: Typography,
+            props: {
+                gutterBottom: true,
+                variant: "subtitle1",
+                paragraph: true,
+                color: "textSecondary"
             },
         },
         p: {
