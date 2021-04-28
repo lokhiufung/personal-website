@@ -3,7 +3,8 @@ import {Route, Switch} from "react-router-dom";
 
 import AboutMe from "./aboutMe";
 import Post from "./post";
-import Blog from "./blog";
+// import Blog from "./blog";
+import Blog from "./blog2";
 
 
 

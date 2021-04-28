@@ -3,7 +3,7 @@ import post1 from './posts/post1.md';
 import projectCantonese from './posts/project-cantonese.md';
 import csASRTrainingEnhancement from './posts/cs-asr-training-enhancement.md'
 
-export const postsData = [
+export const POSTSDATA = [
     {
         title: "End-to-end cantonese-english code switching speech recognition",
         slug: "end-to-end-cantonese-english-code-switching-speech-recognition",
@@ -22,4 +22,7 @@ export const postsData = [
         descriptions: "An journal of develping ASR model for cantonese",
         path: csASRTrainingEnhancement
     },
-]
+];
+
+
+export const BLOG_TITLE_MAX_LENGTH = 30;

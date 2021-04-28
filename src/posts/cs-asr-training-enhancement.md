@@ -10,6 +10,7 @@ It may not be possible to train a code-switching asr model by combining cantones
 There are only 26 (lower-cased) characters in english, while there are ~6k characters in our cantonese dataset. To balance the classes in cantonese and english, it is suggested to use subword tokens for english. We can choose the number of tokens for english in order to get comparable number of tokens with chinese characters.
 
 ### 2. Add a language identification task in training
+We can explicitly force the ASR model to be aware of langauge switching. Recently some searches on code-switching ASR on mandarin + english suggested that adding a frame level langauge identification task could help improve the accuracy.
 
 
 ### References

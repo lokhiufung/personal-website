@@ -3,11 +3,11 @@ import {useParams} from "react-router-dom";
 import {makeStyles, Container} from "@material-ui/core"
 
 import Markdown from "./markdown"
-import {postsData} from "../constants";
+import {POSTSDATA} from "../constants";
 
 
 const finPostBySlug = (slug) => {
-    return postsData.find(postData => postData.slug === slug)
+    return POSTSDATA.find(postData => postData.slug === slug)
 }
 
 const useStyles = makeStyles(() => ({
