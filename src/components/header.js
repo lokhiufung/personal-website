@@ -23,7 +23,7 @@ const headersData = [
 
 const useStyles = makeStyles(() => ({
 	header: {
-		backgroundColor: "#400CCC",
+		backgroundColor: "primary",
 		paddingRight: "79px",
 		paddingLeft: "118px",
 	},
@@ -47,11 +47,11 @@ const useStyles = makeStyles(() => ({
 
 
 export default function Header() {
-	const { header, logo, menuButton, toolbar } = useStyles();
+	const classes = useStyles();
 
 	const displayDesktop = () => {
 		return (
-			<Toolbar className={toolbar}>
+			<Toolbar className={classes.toolbar}>
 				{myLogo}
 				{getMenuButtons()}
 			</Toolbar>
@@ -59,7 +59,7 @@ export default function Header() {
 	};
 	
 	const myLogo = (
-		<Typography variant="h6" component="h1" className={logo}>
+		<Typography variant="h6" component="h1" className={classes.logo}>
 			Hiu Fung Lok
 		</Typography>
 	);
@@ -67,7 +67,7 @@ export default function Header() {
 	const getMenuButtons = () => {
 		return headersData.map(({label, href}) => {
 			return (
-				<Button {...{key: label, color: "inherit", to: href, component: Link, className: menuButton}}>
+				<Button {...{key: label, color: "inherit", to: href, component: Link, className: classes.menuButton}}>
 					{label}
 				</Button>
 			);
@@ -75,8 +75,8 @@ export default function Header() {
 	};
 
   	return (
-    	<header>
-     		<AppBar className={header}>{displayDesktop()}</AppBar>
+    	<header className="header">
+     		<AppBar className={classes.header}>{displayDesktop()}</AppBar>
     	</header>
   );
 }

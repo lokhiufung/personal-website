@@ -8,19 +8,25 @@ export const POSTSDATA = [
         title: "End-to-end cantonese-english code switching speech recognition",
         slug: "end-to-end-cantonese-english-code-switching-speech-recognition",
         descriptions: "An journal of develping ASR model for cantonese",
-        path: post1
+        path: post1,
+        imageUrl: "",
+        isReady: false,
     },
     {
         title: "Project Cantonese",
         slug: "project-cantonese",
         descriptions: "An journal of develping ASR model for cantonese",
-        path: projectCantonese
+        path: projectCantonese,
+        imageUrl: "",
+        isReady: true,
     },
     {
         title: "Enhancement for code-switching ASR",
         slug: "enhancement-for-code-switching-asr",
         descriptions: "An journal of develping ASR model for cantonese",
-        path: csASRTrainingEnhancement
+        path: csASRTrainingEnhancement,
+        imageUrl: "",
+        isReady: true,
     },
 ];
 

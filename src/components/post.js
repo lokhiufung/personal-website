@@ -2,6 +2,8 @@ import {React, useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
 import {makeStyles, Container} from "@material-ui/core"
 
+import Header from "./header"
+
 import Markdown from "./markdown"
 import {POSTSDATA} from "../constants";
 
@@ -10,12 +12,9 @@ const finPostBySlug = (slug) => {
     return POSTSDATA.find(postData => postData.slug === slug)
 }
 
-const useStyles = makeStyles(() => ({
-    root: {
-        display: "flex",
-        paddingTop: "10%",
-        justifyContent: "center",
-        // alignItems: "center"
+const useStyles = makeStyles((theme) => ({
+    postContainer: {
+        paddingTop: theme.spacing(10),
     }
 }))
 
@@ -35,12 +34,14 @@ export default function Post() {
     }, [])
 
     return (
-        <Container maxWidth="md">
-            <div className={classes.root}>
+        <div className="post">
+            <Header />
+            <Container maxWidth="md" className={classes.postContainer}>
                 <Markdown>
                     {state.post}        
                 </Markdown>
-            </div>
-        </Container>
+            </Container>
+        </div>
+        
     )
 }

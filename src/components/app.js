@@ -1,18 +1,21 @@
 import React from "react";
-import {BrowserRouter, Route} from "react-router-dom"
-import {makeStyles, ThemeProvider, createMuiTheme} from "@material-ui/core"
+import {BrowserRouter, Route, Switch} from "react-router-dom"
+import {ThemeProvider, createMuiTheme} from "@material-ui/core"
 import {red, green} from "@material-ui/core/colors"
 
-import Header from "./header";
-import Body from "./body";
-// import Footer from "./footer";
-
+import AboutMe from "./aboutMe";
+import Post from "./post";
+import Blog from "./blog";
 
 
 const theme = createMuiTheme({
     palette: {
-        primiary: red,
-        secondary: green
+        primary: {
+            main: "#1f09e0"
+        },
+    },
+    background: {
+        default: "#fff"
     }
 });
 
@@ -22,10 +25,12 @@ export default function App() {
     return (
         <ThemeProvider theme={theme}>
             <BrowserRouter>
-                <React.Fragment className="App">
-                    <Header/>
-                    <Body />
-                </React.Fragment>
+                <Switch>
+                    <Route path="/aboutMe" exact component={AboutMe}/>
+                    <Route path="/blog" component={Blog}/>
+                    <Route path="/post/:slug" component={Post}/>
+                    <Route path="/" component={AboutMe}/>
+                </Switch>
             </BrowserRouter>
         </ThemeProvider>
     );
