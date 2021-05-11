@@ -11,6 +11,9 @@ export const POSTSDATA = [
         path: post1,
         imageUrl: "https://images.unsplash.com/photo-1518599807935-37015b9cefcb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
         isReady: false,
+        tags: [
+            'SpeechRecognition', 'Cantonese'
+        ]
     },
     {
         title: "Difficulties in building cantonese voice assistant",
@@ -19,6 +22,9 @@ export const POSTSDATA = [
         path: difficulties,
         imageUrl: "https://images.unsplash.com/photo-1613491291331-677905ce6754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
         isReady: true,
+        tags: [
+            'VoiceAssistant', 'Cantonese'
+        ]
     },
     {
         title: "Enhancement for code-switching ASR",
@@ -27,6 +33,9 @@ export const POSTSDATA = [
         path: csASRTrainingEnhancement,
         imageUrl: "https://images.unsplash.com/photo-1465343161283-c1959138ddaa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
         isReady: true,
+        tags: [
+            'SpeechRecognition', 'Cantonese', 'CodeSwitching'
+        ]
     },
 ];
 

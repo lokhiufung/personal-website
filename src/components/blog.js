@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import {Typography, Box, Grid, Container, Card, CardMedia, CardContent, CardActions, CardActionArea, Button, makeStyles} from "@material-ui/core";
 
 import Header from "./header"
-
+import PostGrid from "./postGrid";
 import {POSTSDATA, BLOG_TITLE_MAX_LENGTH} from "../constants";
 
 
@@ -30,9 +30,19 @@ const useStyles = makeStyles((theme) => ({
     },
     card: {
         maxWidth: "100%",
+        height: "100%",
+        // display: "flex",
+        // flexDirection: "row",
+    },
+    cardActionArea: {
+        // flexDirection: "row",
+        height: "88%",
     },
     cardActions: {
-        display: "flex",
+        // flexDirection: "row",
+        // display: "flex",
+        // position: "relative",
+        // bottom: 0
         // margin: "0 10px",
         // justifyContent: "space-between",
     },
@@ -68,31 +78,32 @@ export default function Blog() {
                 <Grid container spacing={3}>
                     {POSTSDATA.filter(postData => {return postData.isReady}).map(postData => {
                         return (
-                            <Grid item xs={12} sm={6} md={4}>
-                                <Card className={classes.card}>
-                                    <CardActionArea>
-                                        {/* <Link to={"/post/" + postData.slug}> */}
-                                            <CardMedia
-                                                className={classes.media}
-                                                image={postData.imageUrl}
-                                            />
-                                            <CardContent>
-                                                <Typography gutterBottom variant="h5" component="h2">
-                                                    {postData.title}
-                                                </Typography>
-                                                <Typography variant="body2" color="textSecondary" component="p">
-                                                    {postData.descriptions}
-                                                </Typography>
-                                            </CardContent>
-                                        {/* </Link> */}
-                                    </CardActionArea>
-                                    <CardActions className={classes.cardActions}>
-                                        <Button className={classes.button} variant="outlined" to={"/post/" + postData.slug} component={Link}>
-                                            Read more
-                                        </Button>
-                                    </CardActions>
-                                </Card>
-                            </Grid>
+                            <PostGrid postData={postData}/>
+                            // <Grid item xs={12} sm={6} md={4}>
+                            //     <Card className={classes.card}>
+                            //         <CardActionArea className={classes.cardActionArea}>
+                            //             {/* <Link to={"/post/" + postData.slug}> */}
+                            //                 <CardMedia
+                            //                     className={classes.media}
+                            //                     image={postData.imageUrl}
+                            //                 />
+                            //                 <CardContent>
+                            //                     <Typography gutterBottom variant="h5" component="h2">
+                            //                         {postData.title}
+                            //                     </Typography>
+                            //                     <Typography variant="body2" color="textSecondary" component="p">
+                            //                         {postData.descriptions}
+                            //                     </Typography>
+                            //                 </CardContent>
+                            //             {/* </Link> */}
+                            //         </CardActionArea>
+                            //         <CardActions className={classes.cardActions}>
+                            //             <Button className={classes.button} variant="outlined" to={"/post/" + postData.slug} component={Link}>
+                            //                 Read more
+                            //             </Button>
+                            //         </CardActions>
+                            //     </Card>
+                            // </Grid>
                         )
                     })}
                 </Grid>

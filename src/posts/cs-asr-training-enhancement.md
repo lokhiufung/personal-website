@@ -1,4 +1,5 @@
 # Enhancement for code-switching ASR
+##### April, 8, 2021 by [Hiu Fung Lok](/)
 
 At this moment, I have around 600hrs of pure cantonese audio dataset, 1000 hrs of pure english audio dataset from LibriSpeech. My target is to build an ASR model with strong performance in cantonese, and being able to recognize some english words (1 or 2 words maybe) in an audio. For example, **點樣book羽毛球場**. The ASR model should correctly transcribe all the chinese words **點樣**, **羽毛球場**, and the english word **book**.
 
@@ -14,7 +15,7 @@ We can explicitly force the ASR model to be aware of langauge switching. Recentl
 
 
 ### References
-1. [Towards code switched ASR for end to end CTC models](https://www.microsoft.com/en-us/research/uploads/prod/2019/09/Towards_code_switched_ASR_for_End_to_End_CTC_models.pdf)
-2. [On end to end solution to mandarin-english code switching speech recognition](https://arxiv.org/pdf/1811.00241.pdf
+- [Towards code switched ASR for end to end CTC models](https://www.microsoft.com/en-us/research/uploads/prod/2019/09/Towards_code_switched_ASR_for_End_to_End_CTC_models.pdf)
+- [On end to end solution to mandarin-english code switching speech recognition](https://arxiv.org/pdf/1811.00241.pdf
 )
-3. [Towards end to end code switching speech recognition](https://arxiv.org/pdf/1810.13091.pdf)
+- [Towards end to end code switching speech recognition](https://arxiv.org/pdf/1810.13091.pdf)
