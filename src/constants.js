@@ -1,7 +1,9 @@
 // import aboutMe from './posts/about-me.md';
 import post1 from './posts/post1.md';
 import difficulties from './posts/project-cantonese.md';
-import csASRTrainingEnhancement from './posts/cs-asr-training-enhancement.md'
+import csASRTrainingEnhancement from './posts/cs-asr-training-enhancement.md';
+import VAComponents from './posts/essential-components-of-a-voice-assistant.md';
+
 
 export const POSTSDATA = [
     {
@@ -35,6 +37,17 @@ export const POSTSDATA = [
         isReady: true,
         tags: [
             'SpeechRecognition', 'Cantonese', 'CodeSwitching'
+        ]
+    },
+    {
+        title: "Essential components of a voice assistant",
+        slug: "essential-components-of-a-voice-assistant",
+        descriptions: "Briefly introduce each component of a voice assistant",
+        path: VAComponents,
+        imageUrl: "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+        isReady: true,
+        tags: [
+            'Cantonese', 'CodeSwitching', 'ContrastiveLearning'
         ]
     },
 ];
