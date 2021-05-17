@@ -27,8 +27,8 @@ export default function App() {
             <BrowserRouter>
                 <Switch>
                     <Route path="/aboutMe" exact component={AboutMe}/>
-                    <Route path="/blog" component={Blog}/>
                     <Route path="/post/:slug" component={Post}/>
+                    <Route path="/blog" component={Blog}/>
                     <Route path="/" component={AboutMe}/>
                 </Switch>
             </BrowserRouter>

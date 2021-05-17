@@ -18,14 +18,14 @@ export const POSTSDATA = [
         ]
     },
     {
-        title: "Difficulties in building cantonese voice assistant",
-        slug: "difficulties-building-voice-assistant",
-        descriptions: "List the difficulties in building voice assistant in cantonese (Hong Kong)",
+        title: "Difficulties in building cantonese voice chatbot",
+        slug: "difficulties-building-voice-chatbot",
+        descriptions: "List the difficulties in building voice chatbot in cantonese (Hong Kong)",
         path: difficulties,
         imageUrl: "https://images.unsplash.com/photo-1613491291331-677905ce6754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
         isReady: true,
         tags: [
-            'VoiceAssistant', 'Cantonese'
+            'VoiceAssistant', 'Cantonese', 'VoiceChatbot'
         ]
     },
     {
