@@ -1,26 +1,14 @@
-// import aboutMe from './posts/about-me.md';
-import post1 from './posts/post1.md';
-import difficulties from './posts/project-cantonese.md';
-import csASRTrainingEnhancement from './posts/cs-asr-training-enhancement.md';
+import difficulties from './posts/difficulties-in-building-asr-model-for-hongkongers.md';
+import csASRTrainingEnhancement from './posts/solution-to-the-difficulties-in-building-asr-model-for-hongkongers.md';
 import VAComponents from './posts/essential-components-of-a-voice-assistant.md';
 
 
 export const POSTSDATA = [
+    
     {
-        title: "End-to-end cantonese-english code switching speech recognition",
-        slug: "end-to-end-cantonese-english-code-switching-speech-recognition",
-        descriptions: "An journal of develping ASR model for cantonese",
-        path: post1,
-        imageUrl: "https://images.unsplash.com/photo-1518599807935-37015b9cefcb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
-        isReady: false,
-        tags: [
-            'SpeechRecognition', 'Cantonese'
-        ]
-    },
-    {
-        title: "Difficulties in building cantonese voice chatbot",
-        slug: "difficulties-building-voice-chatbot",
-        descriptions: "List the difficulties in building voice chatbot in cantonese (Hong Kong)",
+        title: "Difficulties in building ASR model for HongKongers",
+        slug: "difficulties-in-building-asr-model-for-hongkongers",
+        descriptions: "List the difficulties in building an ASR model in cantonese (Hong Kong)",
         path: difficulties,
         imageUrl: "https://images.unsplash.com/photo-1613491291331-677905ce6754?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80",
         isReady: true,
@@ -29,9 +17,9 @@ export const POSTSDATA = [
         ]
     },
     {
-        title: "Enhancement for code-switching ASR",
-        slug: "enhancement-for-code-switching-asr",
-        descriptions: "An journal of develping ASR model for cantonese",
+        title: "Solution to the difficulties in building ASR model for HongKongers",
+        slug: "solution-to-the-difficulties-in-building-asr-model-for-hongkongers",
+        descriptions: "Describe solutions to the difficulties of training ASR model in cantonese (Hong Kong)",
         path: csASRTrainingEnhancement,
         imageUrl: "https://images.unsplash.com/photo-1465343161283-c1959138ddaa?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
         isReady: true,

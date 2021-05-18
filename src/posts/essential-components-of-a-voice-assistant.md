@@ -43,7 +43,7 @@ Generally, we need to extract the intent and slots from user input. An intent is
 This model (https://zxdcs.github.io/pdf/spoken_language_understanding.pdf) can jointly determine the intent and slot from user input. A set of intents and named entities should be defined for training and deployment. The immediate limitation of this model is the level of natural language understanding is constrained by the size of pre-defined intents and named entities, but it is still much more flexible than the FAQ style engine.
 
 
-### Reference
+### References
 - [Jasper: An End-to-End Convolution Neural Acoustic Model](https://arxiv.org/pdf/1904.03288.pdf)
 - [Wav2Letter: an End-to-End ConvNet-based Speech Recognition System](https://arxiv.org/pdf/1609.03193.pdf)
 - [wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations](https://arxiv.org/pdf/2006.11477.pdf)

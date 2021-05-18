@@ -1,4 +1,4 @@
-# Difficulties in building building ASR model for HongKongers
+# Difficulties in building ASR model for HongKongers
 ##### May, 11, 2021 by [Hiu Fung Lok](/)
 
 <img src="https://images.unsplash.com/photo-1612698903786-00d4b6f52246?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" width="90%"/>
@@ -13,9 +13,6 @@ With the unique history of Hong Kong, Hong Kong people speak both cantonese and 
 
 ### 2. The amount of training data
 Cantonese is a kind of low resource language. There are limited amount of resources for training ASR model. One popular cantonese training dataset for ASR model is common voice's [zh-hk](https://commonvoice.mozilla.org/zh-HK/datasets). It contains around 14 hrs of validated audio-text data with 2,536 speakers. On the other hand, there are 2,181 hrs of audio data with 66,173 speakers for english in common voice. We can see that the amount of data for training speech recognition models for cantonese is not comparable with english. Most of existing SOTA end-to-end deep learning models for speech recognition is built and evaluated using english training dataset (e.g LibriSpeech, WSJ, etc). Direct application of these models on the current cantonese dataset may not result in acceptable performance.
-
-
-
 
 
 

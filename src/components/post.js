@@ -13,14 +13,19 @@ const findPostBySlug = (slug) => {
 }
 
 
-const findPostsWithTags = (tags) => {
+const findPostsWithTags = (tags, currentSlug) => {
     return POSTSDATA.filter(postData => {
-        const intersection = tags.filter(tag => postData.tags.includes(tag));
-        if (intersection.length > 0) {
-            return true;
-        } else {
+        if (currentSlug === postData.slug) {
+            // if it is the same post, filter it
             return false;
-        };
+        } else {
+            const intersection = tags.filter(tag => postData.tags.includes(tag));
+            if (intersection.length > 0) {
+                return true;
+            } else {
+                return false;
+            };
+        }
     }); 
 }
 
@@ -47,11 +52,12 @@ export default function Post() {
 
     var {slug} = useParams();
     const postData = findPostBySlug(slug);
-    const relatedPostData = findPostsWithTags(postData.tags);
+    const relatedPostData = findPostsWithTags(postData.tags, slug);
 
+    // reminder: useEffect will be triggered after slug changes; https://stackoverflow.com/questions/58015602/how-to-rerender-component-in-useeffect-hook
     useEffect(() => {
         fetch(postData.path).then((response) => response.text()).then((text) => setState({post: text}))
-    }, [])
+    }, [slug])
 
     return (
         <div className="post">
