@@ -18,11 +18,11 @@ This is the output part of the entire voice chatbot system. This part converts t
 
 <img src="https://images.unsplash.com/photo-1603184017968-953f59cd2e37?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1502&q=80" width="80%">
 
-WaveNet should be one the earliest attemps to replace tranditional [concatenative TTS](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Es-YRKMAAAAJ&citation_for_view=Es-YRKMAAAAJ:u5HHmVD_uO8C) and HMM based speech synthesis model with a deep neural network. It directly models the raw waveform of the audio signal. This model produces more natural-sounding speech.
+WaveNet should be one of the earliest attemps to replace tranditional [concatenative TTS](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=Es-YRKMAAAAJ&citation_for_view=Es-YRKMAAAAJ:u5HHmVD_uO8C) and HMM based speech synthesis model with a deep neural network. It directly models the raw waveform of the audio signal. This model produces more natural-sounding speech.
 
 Later work by Google research team on text to speech is Tacotron/Tacotron2. This model separates in 2 sub-models: a mel-spectrogram generator and a neural vocoder. The mel-spectrogram generator models the mel-spectrogram with text input. Then, the generated mel-spectrogram will be fed into a neural encoder (e.g WaveNet) to generate audio signals from mel-spectrogram.
 
-More improvements on this kind of two- stages models has been made. WaveRNN uses recurrent neural network to improve the latency problem of WaveNet during the deployment phrase. WaveGlow uses a flow-based generative model to generate audio samples in faster-than-real-time.   
+More improvements on this kind of two-stages models has been made. WaveRNN uses recurrent neural network to improve the latency problem of WaveNet during the deployment phrase. WaveGlow uses a flow-based generative model to generate audio samples in faster-than-real-time.   
 
 ### Natural langauge understanding
 This is the core part of the entire chatbot system. User’s intent (or query) will be extracted 
@@ -31,16 +31,16 @@ Thanks to the recent success of BERT in many NLP tasks, we now can have a more c
 ### 1. FAQ style engine
 FAQ (Frequently Ask Questions~FYI) is a set of question-answer pairs. The purpose of this kind of engine is to find the most relevant question from the FAQ set with the user's input question. One possible scenario of application is a chatbot for customer service. People may want to know more about the services provided by a company. Then, a FAQ-style chatbot will be perfect for this company to communicate with their customers. For example, …
 
-Models like Sentence-BERT (https://arxiv.org/pdf/1908.10084.pdf) help easily compute dense vector representations for sentences, paragraphs. We can encode all FAQ questions as dense vectors and use these vectors as searching indexes. Since the dense vectors are context aware, the searching should robustly handle the various user input questions, even with different syntax. (e.g “What is Town gas?” vs “Tell me more about Town Gas”).
+Models like [Sentence-BERT](https://arxiv.org/pdf/1908.10084.pdf) help easily compute dense vector representations for sentences, paragraphs. We can encode all FAQ questions as dense vectors and use these vectors as searching indexes. Since the dense vectors are context aware, the searching should robustly handle various user input questions, even with different syntax. (e.g “What is [Town Gas](https://www.towngas.com/tc/Home)?” vs “Tell me more about [Town Gas](https://www.towngas.com/tc/Home)”).
 
-Despite the simplicity of this approach, the ability of this chatbot is limited by the pre-defined FAQ set. The chatbot can only give answers within the FAQ set. Therefore, this kind of engine may only serve as an information center.
+Despite the simplicity of this approach, the ability of this chatbot is limited by the pre-defined set of FAQ. The chatbot can only give answers within the set. Therefore, this kind of engine may only serve as an information center.
 
 ### 2. Intent determination and slot filling  
 Instead of FAQ question answering, we may want to have a more versatile chatbot. These bot can do more than just chatting. We hope that they can help us work on any task that we want - a virtual assistant.
 
 Generally, we need to extract the intent and slots from user input. An intent is what action the user wants to do. This may be expressed as a function with some arguments. Slots are those arguments to be filled into the function. The bot then should be able to take the action for the user by calling this function with arguments filled.
 
-This model (https://zxdcs.github.io/pdf/spoken_language_understanding.pdf) can jointly determine the intent and slot from user input. A set of intents and named entities should be defined for training and deployment. The immediate limitation of this model is the level of natural language understanding is constrained by the size of pre-defined intents and named entities, but it is still much more flexible than the FAQ style engine.
+This [model](https://zxdcs.github.io/pdf/spoken_language_understanding.pdf) can jointly determine the intent and slot from user input. A set of intents and named entities should be defined for training and deployment. The immediate limitation of this model is the level of natural language understanding is constrained by the size of pre-defined intents and named entities, but it is still much more flexible than the FAQ style engine.
 
 
 ### References
@@ -51,3 +51,5 @@ This model (https://zxdcs.github.io/pdf/spoken_language_understanding.pdf) can j
 - [Natural TTS Synthesis by Conditioning WaveNet on Mel Spectrogram Predictions](https://arxiv.org/abs/1712.05884)
 - [Efficient Neural Audio Signal](https://arxiv.org/pdf/1802.08435v2.pdf)
 - [WaveGlow: A Flow-based Generative Network For Speech Synthesis](https://arxiv.org/pdf/1811.00002.pdf)
+- [Sentence-Bert: Sentence Embedding using Siamese BERT-Networks](https://arxiv.org/pdf/1908.10084.pdf)
+- [A Joint Model of Intent Determination and Slot Filling for Spoken Language Understanding](https://zxdcs.github.io/pdf/spoken_language_understanding.pdf)

@@ -9,10 +9,9 @@ I was an AI Application Developer in [IMIMR Systems Limited](https://www.imimr.b
 
 Personally, I am also interested in interactive AI and it's related algorithms (e.g algorithms in deep reinforcement learning). I believe that the next generation of AI should be more interactive and adaptive. (Exploring the environment by AI itself instead of preparing large scale super expensive training dataset). I am interested in building a DevOp for such interactive AI.
 
-I am also a Korfball and basketball player :)
+I am also a [Korfball](https://www.youtube.com/watch?v=lnNSU4kbVvI) and basketball player :)
 
-<div style="display:'flex';justify-content:'space-evenly'">
-    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1367&q=80" width="50%">
-    <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1367&q=80" width="50%">
-</div>
+Please contact me with my email address *lokhiufung123@gmail.com*. 
+<!-- 
+<div style="display:'flex';align-content:'space-between'"> -->
 

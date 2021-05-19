@@ -17,7 +17,12 @@ Getting more good quality data for training can alway boost up the performace of
 Getting *2)* is a little bit tricky. There are no publicly available corpus for code-switching cantonese. A recent research suggest 2 ways to produce code-switching corpus: **word translation** and **word insertion**. We can first conduct word segmentaion and POS tagging on cantonese corpus. Then we randomly select a noun/verb and conduct word-to-word translation. For word insertion, we also first conduct word segmentation on the corpus. Then we randomly select an english word from an english [lexicon](https://en.wikipedia.org/wiki/Lexicon), and insert the word into the utterance at a random position.
 
 ### 3. Add language identification as an auxiliary task to the loss function
-Getting the correct token while there are 2 possible languages in the audio signal definitly gives challenges to asr model training. And there are far more cantonese tokens than english tokens in a single transcription. (e.g *最近嘅apple store 喺邊*). Adding an task to force the model to identify the lanaguge of the predicted token should help predict the correct tokens. The model should be noted that there may be 2 lanaguages in a single sample by the gradient feedback from the language identification loss.     
+Getting the correct token while there are 2 possible languages in the audio signal definitly gives challenges to asr model training. And there are far more cantonese tokens than english tokens in a single transcription. (e.g *最近嘅apple store 喺邊*). Adding an task to force the model to identify the lanaguge of the predicted token should help predict the correct tokens. The model should be noted that there may be 2 lanaguages in a single sample by the gradient feedback from the language identification loss. 
+
+### 4. Use a pretrained multilingual Wav2Vec2 model as encoder
+The Facebook research team FAIR have shown that powerful representations learnt from speech audio alone can significantly help speech recognition. Recently they released their pretrained model [Wav2Vec2-XLSR-53](https://huggingface.co/facebook/wav2vec2-large-xlsr-53) . XLSR learns cross-lingual speech representations by pretraining a single model from the raw wavefrom of speech in multiple lanaguages
+(53 languages and over 50k hours of training data). When the model is fine-tuned with small labelled data, the model can achieve better performance than training without the pretrained model. This multilingual pretrained model may significantly reduce the amount of training data needed.
+
 
 ### References
 - [Towards code switched ASR for end to end CTC models](https://www.microsoft.com/en-us/research/uploads/prod/2019/09/Towards_code_switched_ASR_for_End_to_End_CTC_models.pdf)
@@ -25,3 +30,5 @@ Getting the correct token while there are 2 possible languages in the audio sign
 )
 - [Towards end to end code switching speech recognition](https://arxiv.org/pdf/1810.13091.pdf)
 - [Data augmentation for end to end code switching speech recognition](https://arxiv.org/pdf/2011.02160.pdf)
+- [Unsupervised Cross-Lingual Representation Learning for Speech Recognition](https://arxiv.org/pdf/2006.13979.pdf)
+- [wav2vec2.0: A Framework for Self-Supervised Learning of Speech Representations](https://arxiv.org/pdf/2006.11477.pdf)
