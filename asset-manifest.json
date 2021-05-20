@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.js": "https://lokhiufung.github.io/personal-website/static/js/main.88595347.chunk.js",
-    "main.js.map": "https://lokhiufung.github.io/personal-website/static/js/main.88595347.chunk.js.map",
-    "runtime-main.js": "https://lokhiufung.github.io/personal-website/static/js/runtime-main.54ede782.js",
-    "runtime-main.js.map": "https://lokhiufung.github.io/personal-website/static/js/runtime-main.54ede782.js.map",
-    "static/js/2.f4ea80ae.chunk.js": "https://lokhiufung.github.io/personal-website/static/js/2.f4ea80ae.chunk.js",
-    "static/js/2.f4ea80ae.chunk.js.map": "https://lokhiufung.github.io/personal-website/static/js/2.f4ea80ae.chunk.js.map",
-    "index.html": "https://lokhiufung.github.io/personal-website/index.html",
-    "static/js/2.f4ea80ae.chunk.js.LICENSE.txt": "https://lokhiufung.github.io/personal-website/static/js/2.f4ea80ae.chunk.js.LICENSE.txt",
-    "static/media/about-me.e6699110.md": "https://lokhiufung.github.io/personal-website/static/media/about-me.e6699110.md",
-    "static/media/difficulties-in-building-asr-model-for-hongkongers.107f4bbd.md": "https://lokhiufung.github.io/personal-website/static/media/difficulties-in-building-asr-model-for-hongkongers.107f4bbd.md",
-    "static/media/essential-components-of-a-voice-assistant.7cc5f405.md": "https://lokhiufung.github.io/personal-website/static/media/essential-components-of-a-voice-assistant.7cc5f405.md",
-    "static/media/solution-to-the-difficulties-in-building-asr-model-for-hongkongers.24281aba.md": "https://lokhiufung.github.io/personal-website/static/media/solution-to-the-difficulties-in-building-asr-model-for-hongkongers.24281aba.md"
+    "main.js": "personal-website/static/js/main.f06f45ad.chunk.js",
+    "main.js.map": "personal-website/static/js/main.f06f45ad.chunk.js.map",
+    "runtime-main.js": "personal-website/static/js/runtime-main.746a2944.js",
+    "runtime-main.js.map": "personal-website/static/js/runtime-main.746a2944.js.map",
+    "static/js/2.1a18b7de.chunk.js": "personal-website/static/js/2.1a18b7de.chunk.js",
+    "static/js/2.1a18b7de.chunk.js.map": "personal-website/static/js/2.1a18b7de.chunk.js.map",
+    "index.html": "personal-website/index.html",
+    "static/js/2.1a18b7de.chunk.js.LICENSE.txt": "personal-website/static/js/2.1a18b7de.chunk.js.LICENSE.txt",
+    "static/media/about-me.e6699110.md": "personal-website/static/media/about-me.e6699110.md",
+    "static/media/difficulties-in-building-asr-model-for-hongkongers.107f4bbd.md": "personal-website/static/media/difficulties-in-building-asr-model-for-hongkongers.107f4bbd.md",
+    "static/media/essential-components-of-a-voice-assistant.7cc5f405.md": "personal-website/static/media/essential-components-of-a-voice-assistant.7cc5f405.md",
+    "static/media/solution-to-the-difficulties-in-building-asr-model-for-hongkongers.24281aba.md": "personal-website/static/media/solution-to-the-difficulties-in-building-asr-model-for-hongkongers.24281aba.md"
   },
   "entrypoints": [
-    "static/js/runtime-main.54ede782.js",
-    "static/js/2.f4ea80ae.chunk.js",
-    "static/js/main.88595347.chunk.js"
+    "static/js/runtime-main.746a2944.js",
+    "static/js/2.1a18b7de.chunk.js",
+    "static/js/main.f06f45ad.chunk.js"
   ]
 }
