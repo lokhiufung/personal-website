@@ -6,12 +6,14 @@ import {red, green} from "@material-ui/core/colors"
 import AboutMe from "./aboutMe";
 import Post from "./post";
 import Blog from "./blog";
+import {BASE_URL} from "../constants"
 
 
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: "#1f09e0"
+            // main: "#1f09e0",
+            main: "#18181a",
         },
     },
     background: {
@@ -24,7 +26,7 @@ export default function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            <BrowserRouter>
+            <BrowserRouter basename={BASE_URL}>
                 <Switch>
                     <Route path="/aboutMe" exact component={AboutMe}/>
                     <Route path="/post/:slug" component={Post}/>

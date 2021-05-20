@@ -6,20 +6,16 @@ const useStyles = makeStyles(() => ({
     card: {
         maxWidth: "100%",
         height: "100%",
-        // display: "flex",
-        // flexDirection: "row",
+        display: "flex",
+        flexDirection: 'column',
+        alignItems: 'flex-start',
     },
     cardActionArea: {
-        // flexDirection: "row",
+        flexDirection: "column",
+        alignItems: 'flex-start',
         height: "88%",
     },
     cardActions: {
-        // flexDirection: "row",
-        // display: "flex",
-        // position: "relative",
-        // bottom: 0
-        // margin: "0 10px",
-        // justifyContent: "space-between",
     },
     media: {
         height: 240

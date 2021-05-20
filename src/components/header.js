@@ -24,7 +24,8 @@ const headersData = [
 const useStyles = makeStyles(() => ({
 	header: {
 		backgroundColor: "primary",
-		paddingRight: "79px",
+		// paddingRight: "79px",
+		paddingRight: "10%",
 		paddingLeft: "118px",
 	},
 	logo: {
@@ -33,11 +34,17 @@ const useStyles = makeStyles(() => ({
 		color: "#FFFEFE",
 		textAlign: "left",
 	},
+	menuButtonContainer: {
+		alignItems: "", 
+		display: "flex",
+		// marginLeft: "118px",
+		justifyContent: "space-between",
+	},
 	menuButton: {
 		fontFamily: "Open Sans, sans-serif",
 		fontWeight: 700,
 		size: "18px",
-		marginLeft: "38px",
+		marginLeft: "18px",
 	},
 	toolbar: {
 		display: "flex",
@@ -49,6 +56,26 @@ const useStyles = makeStyles(() => ({
 export default function Header() {
 	const classes = useStyles();
 
+	const myLogo = (
+		<Typography variant="h6" component="h1" className={classes.logo}>
+			Hiu Fung Lok
+		</Typography>
+	);
+	
+	const getMenuButtons = () => {
+		return (
+			<div className={classes.menuButtonContainer}>
+				{headersData.map(({label, href}) => {
+					return (
+						<Button {...{key: label, color: "inherit", to: href, component: Link, className: classes.menuButton}}>
+							{label}
+						</Button>
+					);
+				})}
+			</div>			
+		)
+	};
+	
 	const displayDesktop = () => {
 		return (
 			<Toolbar className={classes.toolbar}>
@@ -58,22 +85,6 @@ export default function Header() {
 		)
 	};
 	
-	const myLogo = (
-		<Typography variant="h6" component="h1" className={classes.logo}>
-			Hiu Fung Lok
-		</Typography>
-	);
-
-	const getMenuButtons = () => {
-		return headersData.map(({label, href}) => {
-			return (
-				<Button {...{key: label, color: "inherit", to: href, component: Link, className: classes.menuButton}}>
-					{label}
-				</Button>
-			);
-		});
-	};
-
   	return (
     	<header className="header">
      		<AppBar className={classes.header}>{displayDesktop()}</AppBar>

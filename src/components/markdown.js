@@ -1,6 +1,6 @@
 import React from "react";
 import ReactMarkdown from "markdown-to-jsx";
-import Typography from "@material-ui/core/Typography";
+import {createMuiTheme, Typography, ThemeProvider} from "@material-ui/core";
 
 
 const options = {
@@ -53,8 +53,18 @@ const options = {
         }
     }
 }
+
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: 'DejaVu Sans Mono, monospace',
+    }
+})
+
+
 export default function Markdown(props) {
     return (
-        <ReactMarkdown options={options} {...props}/>
+        <ThemeProvider theme={theme}>
+            <ReactMarkdown options={options} {...props}/>
+        </ThemeProvider>
     )
 }

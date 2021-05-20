@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+
 import difficulties from './posts/difficulties-in-building-asr-model-for-hongkongers.md';
 import csASRTrainingEnhancement from './posts/solution-to-the-difficulties-in-building-asr-model-for-hongkongers.md';
 import VAComponents from './posts/essential-components-of-a-voice-assistant.md';
@@ -40,4 +42,5 @@ export const POSTSDATA = [
 ];
 
 
-export const BLOG_TITLE_MAX_LENGTH = 30;
+// export const BLOG_TITLE_MAX_LENGTH = 30;
+export const BASE_URL = process.env.PUBLIC_URL;
