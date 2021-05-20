@@ -43,4 +43,4 @@ export const POSTSDATA = [
 
 
 // export const BLOG_TITLE_MAX_LENGTH = 30;
-export const BASE_URL = process.env.PUBLIC_URL;
+export const BASE_NAME = process.env.BASE_NAME;
