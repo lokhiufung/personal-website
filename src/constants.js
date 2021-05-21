@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 
 import difficulties from './posts/difficulties-in-building-asr-model-for-hongkongers.md';
 import csASRTrainingEnhancement from './posts/solution-to-the-difficulties-in-building-asr-model-for-hongkongers.md';
@@ -43,4 +43,3 @@ export const POSTSDATA = [
 
 
 // export const BLOG_TITLE_MAX_LENGTH = 30;
-export const BASE_NAME = process.env.BASE_NAME;
