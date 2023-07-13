@@ -12,9 +12,15 @@ const HeroSection = () => {
                 <h1 className="font-bold text-4xl mt-6 md:text-7xl md:mt-0">Hi! I am Fisher Lok</h1>
                 <p className="text-lg mt-4 mb-6">
                     I'm a Python developer, quant developer, and AI engineer. 
-                    I specialize in creating products centered around conversational AI, aiming to deliver the most engaging interactive experiences with AI. 
-                    Additionally, I design trading systems and liquidity engines that establish a robust framework for algorithmic trading. 
-                    By combining these skills, I ensure seamless integration of AI with human interaction in the trading field. 
+                    I specialize in creating products centered around <span className="font-bold">conversational AI</span>, aiming to deliver the most engaging interactive experiences with AI. 
+                    Additionally, I design and build <span className="font-bold">trading systems</span> and <span className="font-bold">liquidity engines</span> that establish a robust framework for algorithmic trading. 
+                    Combining these skills, I wnat to build products that seamless integrate interactive AI in the trading field.
+                </p>
+                <p className="text-lg mt-4 mb-6">
+                    I am working on a new project right now! Please check out <a className="underline text-blue-500" target="_blank" href="https://www.pfund.ai/">pfund.ai</a> to know more about how to make the best use of interactive <span className="font-bold">LLMs</span> for financial trading. Let's join the rise of <span className="font-bold">agent-based AI</span>!
+                </p>
+                <p className="text-lg mt-4 mb-6">
+                    Please also check out my <a className="underline text-blue-500" target="_blank" href="https://medium.com/@alchemistHK">medium</a>!
                 </p>
             </div>
         </div>

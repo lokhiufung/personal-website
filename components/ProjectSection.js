@@ -6,9 +6,16 @@ import { BsGithub, BsArrowUpRightSqaure } from "react-icons/bs";
 const projects = [
     {
         name: "Using Reinforcement learning algorithms to solve Atari games",
-        description: "Implementation of DRL algorithms for solving gym environments.",
+        description: "Implementation of deep reinforcement learning algorithms for solving openai's gym environments.",
         image: "/project-rl.gif",
         github: "https://github.com/lokhiufung/DRL-implementations/tree/master",
+        link: "",
+    },
+    {
+        name: "Playing Gomoku in terminal!",
+        description: "A fun project: Write a gomoku game from scratch!",
+        image: "/project-gomoku.gif",
+        github: "https://github.com/lokhiufung/gomoku",
         link: "",
     }
 ]
@@ -20,7 +27,7 @@ const ProjectSection = () => {
         <h1 className="text-center font-bold text-4xl">
             Projects
         </h1>
-        <div className="flex flex-col space-y-28 mx-4">
+        <div className="flex flex-col space-y-20 mx-4">
             {projects.map((project, idx) => {
                 return (
                     <div key={idx}>
