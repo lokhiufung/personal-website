@@ -31,7 +31,7 @@ const AboutSection = () => {
                     </p>
                     <p className="text-base mt-4 mb-6">
                         Now, there is another potential solution: LLMs trained on massive amounts of data.
-                        OpenAI's <span className="font-bold">ChatGPT</span>, with its astonishing knowledge, reasoning ability, and understanding of human language, has showcased its immense power to the world since last year.
+                        OpenAI&apos;s <span className="font-bold">ChatGPT</span>, with its astonishing knowledge, reasoning ability, and understanding of human language, has showcased its immense power to the world since last year.
                         Consequently, I believe it is the opportune moment to embark on building AI agents capable of seamless interaction with humans.
                     </p>
                 </div>
