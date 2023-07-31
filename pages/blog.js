@@ -1,14 +1,16 @@
 
-import Footer from '@/components/Footer';
-import HeroSection from '@/components/HeroSection';
 import RootLayout from '@/components/layouts/RootLayout';
+import BlogShowcases from '@/components/BlogShowcases';
+import Footer from '@/components/Footer';
+
 
 export default function Blog() {
   return (
     <RootLayout>
-      <section>
-        <div>Blog</div>
-      </section>
+      <main>
+        <BlogShowcases/>
+        <Footer /> 
+      </main>
     </RootLayout>
   )
 }
