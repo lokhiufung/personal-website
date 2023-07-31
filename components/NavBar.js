@@ -10,20 +10,20 @@ import { IoMdMenu, IoMdClose } from "react-icons/io";
 const NAV_ITEMS = [
     {
         label: "Home",
-        page: "home",
+        page: "/#home",
     },
     {
         label: "About",
-        page: "about",
+        page: "/#about",
     },
     {
         label: "Projects",
-        page: "project",
+        page: "/#project",
     },
-    // {
-    //     label: "Blog",
-    //     page: "/blog",
-    // },
+    {
+        label: "Blog",
+        page: "/blog",
+    },
 ]
 const NavBar = () => {
     const { systemTheme, theme, setTheme } = useTheme();
@@ -52,6 +52,17 @@ const NavBar = () => {
                     >
                         <div className="items-center justify-center md:flex md:space-x-6 space-y-4 md:space-y-0">
                             {NAV_ITEMS.map((item, idx) => {
+                                // return (
+                                //     <Link
+                                //         className={
+                                //             "block lg:inline-block text-neutral-900  hover:text-neutral-500 dark:text-neutral-100"
+                                //         }
+                                //         href={item.page}
+                                //         key={idx}
+                                //     >
+                                //         {item.label}
+                                //     </Link>
+                                // )
                                 return item.page.startsWith("/") ? (
                                     <Link
                                         className={
@@ -63,6 +74,7 @@ const NavBar = () => {
                                         {item.label}
                                     </Link>
                                 ) : (
+                                    // now there is no scrolling effect 
                                     <ScrollLink
                                         key={idx}
                                         to={item.page}
