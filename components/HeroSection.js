@@ -17,9 +17,6 @@ const HeroSection = () => {
                     Combining these skills, I want to build products that seamlessly integrate interactive AI in the trading field.
                 </p>
                 <p className="text-lg mt-4 mb-6">
-                    I am working on a new project right now! Please check out <a className="underline text-blue-500" target="_blank" href="https://www.pfund.ai/">pfund.ai</a> to know more about how to make the best use of interactive <span className="font-bold">LLMs</span> for financial trading. Let&apos;s join the rise of <span className="font-bold">agent-based AI</span>!
-                </p>
-                <p className="text-lg mt-4 mb-6">
                     Please also check out my <a className="underline text-blue-500" target="_blank" href="https://medium.com/@fisherlok">medium</a>!
                 </p>
             </div>
