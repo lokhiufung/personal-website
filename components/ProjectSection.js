@@ -5,7 +5,21 @@ import { BsGithub, BsArrowUpRightSqaure } from "react-icons/bs";
 
 const projects = [
     {
-        name: "Using Reinforcement learning algorithms to solve Atari games",
+        name: "Web scraping buddy",
+        description: "Web scrapers for instagram, XHS and investor contacts. Get a list of poetential influencers and investors for FREE.",
+        image: "/project-webscraping-buddy.gif",
+        github: "https://github.com/lokhiufung/webscraping-buddy",
+        link: "",
+    },
+    {
+        name: "Improving your charting skills for trading",
+        description: "Reinforce Trader is a trading journal app to provide a solution for traders to track analyse and improve their trading strategies.",
+        image: "/project-reinforce-trader.png",
+        github: "https://github.com/lokhiufung/reinforce-trader",
+        link: "www.reinforcetraders.com",
+    },
+    {
+        name: "Using reinforcement learning algorithms to solve Atari games",
         description: "Implementation of deep reinforcement learning algorithms for solving openai's gym environments.",
         image: "/project-rl.gif",
         github: "https://github.com/lokhiufung/DRL-implementations/tree/master",
@@ -17,7 +31,7 @@ const projects = [
         image: "/project-gomoku.gif",
         github: "https://github.com/lokhiufung/gomoku",
         link: "",
-    }
+    },
 ]
 
 
