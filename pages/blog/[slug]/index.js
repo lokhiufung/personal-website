@@ -12,7 +12,6 @@ export default function Post({ post }) {
     )
 }
 
-
 export async function getStaticPaths() {
     const postDetails = await getPostDetails();
     
