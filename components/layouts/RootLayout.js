@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import NavBar from '@/components/NavBar'
 import { ThemeProvider } from 'next-themes'
 
