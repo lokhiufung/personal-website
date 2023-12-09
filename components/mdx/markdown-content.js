@@ -5,10 +5,8 @@ import Image from 'next/image';
 export const mdxComponents = {
     a: ({children, ...props}) => {
         return (
-            <Link {...props} href={props.href || ''}>
-                <a className="text-blue-500 hover:underline">
-                    {children}
-                </a>
+            <Link className="text-blue-500 hover:underline" {...props} href={props.href || ''}>
+                {children}
             </Link>
         );
     },
@@ -24,28 +22,28 @@ export const mdxComponents = {
     ),
     h1: ({children, ...props}) => {
         return (
-            <h1 className="mb-4 text-4xl font-bold text-center" {...props}>
+            <h1 className="mb-4 text-4xl font-bold text-left" {...props}>
                 {children}
             </h1>
         );
     },
     h2: ({children, ...props}) => {
         return (
-            <h2 className="mb-3 text-3xl font-semibold text-center" {...props}>
+            <h2 className="mb-3 text-3xl font-semibold text-left" {...props}>
                 {children}
             </h2>
         );
     },
     h3: ({children, ...props}) => {
         return (
-            <h3 className="mb-3 text-2xl font-semibold text-center" {...props}>
+            <h3 className="mb-3 text-2xl font-semibold text-left" {...props}>
                 {children}
             </h3>
         );
     },
     p: ({children, ...props}) => {
         return (
-            <p className="mb-6 leading-relaxed text-center" {...props}>
+            <p className="mb-6 leading-relaxed text-left" {...props}>
                 {children}
             </p>
         );
@@ -59,14 +57,14 @@ export const mdxComponents = {
     },
     ul: ({children, ...props}) => {
         return (
-            <ul className="mb-6 pl-5 list-disc mx-auto text-center" {...props}>
+            <ul className="mb-6 pl-5 list-disc mx-auto text-left" {...props}>
                 {children}
             </ul>
         );
     },
     ol: ({children, ...props}) => {
         return (
-            <ol className="mb-6 pl-5 list-decimal mx-auto text-center" {...props}>
+            <ol className="mb-6 pl-5 list-decimal mx-auto text-left" {...props}>
                 {children}
             </ol>
         );

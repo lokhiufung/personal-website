@@ -5,7 +5,7 @@ import PostBody from '@/components/mdx/post-body';
 export default function Post({ post }) {
     return (
         <RootLayout>
-            <div className="w-4/5 p-5 mt-36 mx-auto">
+            <div className="w-3/5 p-5 mt-36 mx-auto">
                 <PostBody post={post}/>
             </div>
         </RootLayout>

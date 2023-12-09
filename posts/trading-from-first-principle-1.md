@@ -1,14 +1,14 @@
 ---
 title: 'Trading from first principle 1: Simple maths to help determine the stop loss and take profit'
 slug: 'trading-from-first-principle'
-description: ''
+description: 'This is the beginning of a series of articles about my thoughts on trading and how I use them in day trading. I created a platform called Reinforce Traders, aimed at helping traders reinforce their trading strategies with their own trading journal. As the creator and a trading learner, I am going to use this platform while learning swing trading!'
 date: 'Dec 8, 2023'
-thumbnail: '/thumbnails/cash-macanaya-X9Cemmq4YjM-unsplash.jpg'
+thumbnail: '/thumbnails/trading-from-first-principle-1.png'
 ---
 
 # Trading from First Principle 1: Simple Maths to Help Determine the Stop Loss and Take Profit
 
-This is the beginning of a series of articles about my thoughts on trading and how I use them in day trading. I created a platform called [Reinforce Traders](www.reinforcetraders.com), aimed at helping traders reinforce their trading strategies with their own trading journal. As the creator and a trading learner, I am going to use this platform while learning swing trading!
+This is the beginning of a series of articles about my thoughts on trading and how I use them in day trading. I created a platform called [Reinforce Traders](https://www.reinforcetraders.com), aimed at helping traders reinforce their trading strategies with their own trading journal. As the creator and a trading learner, I am going to use this platform while learning swing trading!
 
 Let's try to play the trading game more systematically and rationally!
 
@@ -26,11 +26,11 @@ With an additional line representing the start of your trade, you can define all
 
 The next question comes up in your mind should be how to set these barries. To do so we have to dive in more. First, you should notice that the return of a trade is random. That means you should use consider probabilities while making decisions.Let's begin defining some probabilities first.
 $$
-p_{+} := { The probability that the stock price hits take profit price before stop loss price in trading horizon }
-p_{-} := { The probability that the stock price hits stop loss price before take profit price in trading horizon }
-p_{0} := { The probability that the stock price hits neither stop loss price nor take profit price in trading horizon }
+p_\{+\} := \text\{ The probability that the stock price hits take profit price before stop loss price in trading horizon \}
+p_\{-\} := \text\{ The probability that the stock price hits stop loss price before take profit price in trading horizon \}
+p_\{0\} := \text\{ The probability that the stock price hits neither stop loss price nor take profit price in trading horizon \}
 
-where p_{+} + p_{-} + p_{0} = 1
+where p_\{+\} + p_\{-\} + p_\{0\} = 1
 $$
 
 Our goal is to make a positive return over the long run. Therefore, the expected return of a trade must be positive:
@@ -40,7 +40,7 @@ $$
 
 Let's examine what $$E[return of a trade]$$ is. For this, we introduce another random variable:
 $$
-r_T := { The return if the stock price hits either stop loss price nor take profit price in trading horizon }
+r_T := \text\{ The return if the stock price hits either stop loss price nor take profit price in trading horizon \}
 $$
 
 where for any return $$r$$:
@@ -50,50 +50,50 @@ $$
 
 Analyzing the expected return:
 $$
-E[return of a trade] = E[return of a trade | r_T] = size * entry_price * (p_{+} * r_{take} - p_{-} * r_{stop} + E[r_T] * p_{0}) > 0
+E[return of a trade] = E[return of a trade | r_T] = size * entry_price * (p_\{+\} * r_\{take\} - p_\{-\} * r_\{stop\} + E[r_T] * p_\{0\}) > 0
 where the size is how many shares you buy
 $$
 
 Re-arranging the items in the inequality, we get:
 $$
-r_{take} > (p_{-} / p_{+}) * r_{stop} - (p_{0} / p_{+}) * E[r_T]
+r_\{take\} > (p_\{-\} / p_\{+\}) * r_\{stop\} - (p_\{0\} / p_\{+\}) * E[r_T]
 $$
 
 ### What Does This Inequality Tell You?
-This inequailty sets the lower bound of the $$r_{take}$$ for giving $$p_{-}$$, $$p_{+}$$, $$r_{stop}$$ and $$E[r_T]$$. Your $$r_{take}$$ should be larger than this lower bound to ensure a positive expected return.
+This inequailty sets the lower bound of the $$r_\{take\}$$ for giving $$p_\{-\}$$, $$p_\{+\}$$, $$r_\{stop\}$$ and $$E[r_T]$$. Your $$r_\{take\}$$ should be larger than this lower bound to ensure a positive expected return.
 
 ### Using the Inequality to Make Decisions
-We can rephrase the inequality to aim for an average return of $$r_{excess}$$ in the long run.
+We can rephrase the inequality to aim for an average return of $$r_\{excess\}$$ in the long run.
 $$
-E[return of a trade] >= size * entry_price * r_{excess}
+E[return of a trade] >= size * entry_price * r_\{excess\}
 $$
 
 Combining the results above, we get:
 $$
-r_{take} >= (1 / p_{+}) * r_{excess} + (p_{-} / p_{+}) * r_{stop} - (p_{0} / p_{+}) * E[r_T]
+r_\{take\} >= (1 / p_\{+\}) * r_\{excess\} + (p_\{-\} / p_\{+\}) * r_\{stop\} - (p_\{0\} / p_\{+\}) * E[r_T]
 $$
 
 Introducing a new variable called $$\gamma$$, which is the probability ratio of the take profit event and the stop loss event:
 $$
-\gamma := p_{+} / p_{-}
+\gamma := p_\{+\} / p_\{-\}
 $$
 
 Then, we can get the final result:
 $$
-r_{take} >= (1 / p_{+}) * r_{excess} + (1 / \gamma) * r_{stop} - (p_{0} / p_{+}) * E[r_{T}]
+r_\{take\} >= (1 / p_\{+\}) * r_\{excess\} + (1 / \gamma) * r_\{stop\} - (p_\{0\} / p_\{+\}) * E[r_\{T\}]
 $$
 
 This formula may seem complex, but it simplifies decision-making to five key variables:
 
-$$r_{stop}$$: Represents your risk tolerance. Typically I will use around 2%.
+$$r_\{stop\}$$: Represents your risk tolerance. Typically I will use around 2%.
 
-$$p_{-}$$: Represents how likely the stop loss event will happen. You can make an educated guess by using chart patterns, technical indicators, news, financial reports,... etc. Whatever that can tell you the move of the stock price. Then you summarize your belief into a single number. I use %%p_{-}$$ from 0.3 to 0.4.
+$$p_\{-\}$$: Represents how likely the stop loss event will happen. You can make an educated guess by using chart patterns, technical indicators, news, financial reports,... etc. Whatever that can tell you the move of the stock price. Then you summarize your belief into a single number. I use %%p_\{-\}$$ from 0.3 to 0.4.
 
-$$\gamma$$: Represents the probability ratio of take profit event and stop loss event. Similar to $$p_{-}$$, you need to make an educated guess. For example, if you think that there are 50-50 chance to hit the stop loss and take profit, you should set it to 1. If you think that there is more likely for the stop loss event to happen than the take profit event, you may set this number to 0.8 or 0.6.
+$$\gamma$$: Represents the probability ratio of take profit event and stop loss event. Similar to $$p_\{-\}$$, you need to make an educated guess. For example, if you think that there are 50-50 chance to hit the stop loss and take profit, you should set it to 1. If you think that there is more likely for the stop loss event to happen than the take profit event, you may set this number to 0.8 or 0.6.
 
-$$E[r_{T}]: Represents the expected return when the stock price hits neither take profit nor stop loss. A good guess will be 0 for symmetry. In a trending market, you may set it to slightly postive (e.g 0.001) or slightly negative (e.g -0.001).
+$$E[r_\{T\}]: Represents the expected return when the stock price hits neither take profit nor stop loss. A good guess will be 0 for symmetry. In a trending market, you may set it to slightly postive (e.g 0.001) or slightly negative (e.g -0.001).
 
-$$r_{excess}$$: Your desired average return over the long run.
+$$r_\{excess\}$$: Your desired average return over the long run.
 
 By focusing on these five factors, you can systematically refine your trading decisions.
 
