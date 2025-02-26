@@ -5,6 +5,13 @@ import { BsGithub, BsArrowUpRightSqaure } from "react-icons/bs";
 
 const projects = [
     {
+        name: "Data pipeline for your quantitative trading research",
+        description: "A data pipeline for quantitative trading research. It includes data collection, data cleaning and data storage.",
+        image: "/project-webscraping-buddy.jpg",
+        github: "https://github.com/lokhiufung/trading-data",
+        link: "",
+    },
+    {
         name: "Web scraping buddy",
         description: "Web scrapers for instagram, XHS and investor contacts. Get a list of poetential influencers and investors for FREE.",
         image: "/project-webscraping-buddy.gif",
