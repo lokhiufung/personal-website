@@ -7,7 +7,7 @@ const projects = [
     {
         name: "Data pipeline for your quantitative trading research",
         description: "A data pipeline for quantitative trading research. It includes data collection, data cleaning and data storage.",
-        image: "/project-webscraping-buddy.jpg",
+        image: "/project-trading-data.jpg",
         github: "https://github.com/lokhiufung/trading-data",
         link: "",
     },
