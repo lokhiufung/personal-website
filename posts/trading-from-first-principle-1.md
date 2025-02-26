@@ -1,6 +1,6 @@
 ---
 title: 'Trading from first principle 1: Simple maths to help determine the stop loss and take profit'
-slug: 'trading-from-first-principle'
+slug: 'trading-from-first-principle-1'
 description: 'This is the beginning of a series of articles about my thoughts on trading and how I use them in day trading. I created a platform called Reinforce Traders, aimed at helping traders reinforce their trading strategies with their own trading journal. As the creator and a trading learner, I am going to use this platform while learning swing trading!'
 date: 'Dec 8, 2023'
 thumbnail: '/thumbnails/trading-from-first-principle-1.png'
