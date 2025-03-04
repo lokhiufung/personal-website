@@ -5,6 +5,13 @@ import { BsGithub, BsArrowUpRightSqaure } from "react-icons/bs";
 
 const projects = [
     {
+        name: "Alchemist - A Ray-based High-Performance Automated Trading System",
+        description: "Alchemist is a high-performance, distributed automated trading system designed to seamlessly transition quantitative research into fully automated algorithmic trading strategies.",
+        image: "/project-alchemist.png",
+        github: "https://github.com/lokhiufung/alchemist",
+        link: "https://boulder-submarine-0ae.notion.site/Alchemist-A-Ray-based-High-Performance-Automated-Trading-System-1ace87b87fa4803cb9ade11517148d65",
+    },
+    {
         name: "Data pipeline for your quantitative trading research",
         description: "A data pipeline for quantitative trading research. It includes data collection, data cleaning and data storage.",
         image: "/project-trading-data.jpg",
