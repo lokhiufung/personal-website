@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisher Lok - Developer & Creator</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTTL9SQWM3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TTTL9SQWM3');
+    </script>
+
+    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Fisher Lok</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#blog" class="nav-link">Blog</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <div class="theme-toggle-slider">☀️</div>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="home" class="hero section">
+            <div class="container">
+                <h1>Hello, I'm Fisher Lok</h1>
+                <p>Quantitative research in the LLM era. Pushing small teams to their absolute limits—surpassing what
+                    traditional expert approaches thought possible.
+                    The future belongs to those who move fast and leverage intelligence at scale.</p>
+                <a href="#projects" class="cta-button">View My Work</a>
+            </div>
+        </section>
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="card project-card">
+                        <img src="assets/images/project-alchemist.png" alt="Alchemist Trading System"
+                            class="project-image"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                        <h3 class="project-title">Alchemist - A Ray-based High-Performance Automated Trading System</h3>
+                        <p class="project-description">Alchemist is a high-performance, distributed automated trading
+                            system designed to seamlessly transition quantitative research into fully automated
+                            algorithmic trading strategies.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Ray</span>
+                            <span class="tag">Trading</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://boulder-submarine-0ae.notion.site/Alchemist-A-Ray-based-High-Performance-Automated-Trading-System-1ace87b87fa4803cb9ade11517148d65"
+                                target="_blank" class="project-link">Documentation</a>
+                            <a href="https://github.com/lokhiufung/alchemist" target="_blank"
+                                class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="card project-card">
+                        <img src="assets/images/project-trading-data.jpg" alt="Trading Data Pipeline"
+                            class="project-image"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                        <h3 class="project-title">Data pipeline for your quantitative trading research</h3>
+                        <p class="project-description">A data pipeline for quantitative trading research. It includes
+                            data collection, data cleaning and data storage.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Data Engineering</span>
+                            <span class="tag">Trading</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lokhiufung/trading-data" target="_blank"
+                                class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="card project-card">
+                        <img src="assets/images/project-webscraping-buddy.gif" alt="Web Scraping Buddy"
+                            class="project-image"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                        <h3 class="project-title">Web scraping buddy</h3>
+                        <p class="project-description">Web scrapers for instagram, XHS and investor contacts. Get a list
+                            of potential influencers and investors for FREE.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Web Scraping</span>
+                            <span class="tag">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lokhiufung/webscraping-buddy" target="_blank"
+                                class="project-link">GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="card project-card">
+                        <img src="assets/images/project-rl.gif" alt="Reinforcement Learning" class="project-image"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                        <h3 class="project-title">Using reinforcement learning algorithms to solve Atari games</h3>
+                        <p class="project-description">Implementation of deep reinforcement learning algorithms for
+                            solving OpenAI's gym environments.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">RL</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lokhiufung/DRL-implementations/tree/master" target="_blank"
+                                class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                    <div class="card project-card">
+                        <img src="assets/images/project-gomoku.gif" alt="Gomoku Game" class="project-image"
+                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                        <h3 class="project-title">Playing Gomoku in terminal!</h3>
+                        <p class="project-description">A fun project: Write a gomoku game from scratch!</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Game</span>
+                            <span class="tag">CLI</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/lokhiufung/gomoku" target="_blank"
+                                class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="blog" class="section">
+            <div class="container">
+                <h2 class="section-title">Latest Blog Posts</h2>
+                <div class="blog-posts">
+                    <article class="blog-post">
+                        <div class="blog-meta">November 21, 2025 • 10 min read</div>
+                        <h3 class="blog-title" onclick="window.location.href='blog/chopin-revolutionary.html'">The Sound
+                            of Fury</h3>
+                        <p class="blog-excerpt">Deconstructing the technique and emotion behind Chopin's "Revolutionary"
+                            Etude with interactive sheet music.</p>
+                        <a href="blog/chopin-revolutionary.html" class="read-more">Read more</a>
+                    </article>
+                    <article class="blog-post">
+                        <div class="blog-meta">November 20, 2025 • 8 min read</div>
+                        <h3 class="blog-title" onclick="window.location.href='blog/furstenbergs-proof.html'">Infinity in
+                            a Finite Space</h3>
+                        <p class="blog-excerpt">An interactive exploration of Furstenberg's beautiful topological proof
+                            of the infinitude of primes.</p>
+                        <a href="blog/furstenbergs-proof.html" class="read-more">Read more</a>
+                    </article>
+                    <article class="blog-post">
+                        <div class="blog-meta">November 19, 2025 • 5 min read</div>
+                        <h3 class="blog-title" onclick="window.location.href='blog/fermats-little-theorem.html'">
+                            Fermat's Little Theorem</h3>
+                        <p class="blog-excerpt">Explore the elegance of number theory and its critical role in modern
+                            cryptography through Fermat's Little Theorem.</p>
+                        <a href="blog/fermats-little-theorem.html" class="read-more">Read more</a>
+                    </article>
+                    <article class="blog-post">
+                        <div class="blog-meta">December 16, 2023 • 10 min read</div>
+                        <h3 class="blog-title"
+                            onclick="window.location.href='blog/lessons-from-my-first-trading-journey.html'">
+                            Lessons from my first trading journey in 2018 — Can arbitrage make me rich?</h3>
+                        <p class="blog-excerpt">In 2018, I started a journey into the world of cryptocurrency trading
+                            and software development with minimal experience. Alongside a knowledgeable friend, I
+                            learned new concepts in trading, cryptocurrency, and software development.</p>
+                        <a href="blog/lessons-from-my-first-trading-journey.html" class="read-more">Read more</a>
+                    </article>
+                    <article class="blog-post">
+                        <div class="blog-meta">February 1, 2022 • 5 min read</div>
+                        <h3 class="blog-title"
+                            onclick="window.open('https://medium.com/data-driven-fiction/human-and-machine-work-together-two-important-intelligent-applications-9e22a1f651a', '_blank')">
+                            Human and machine work together: Two important intelligent applications</h3>
+                        <p class="blog-excerpt">What could be the most important field of research in artificial
+                            intelligence? Natural language understanding may be the one. Advances in natural language
+                            understanding can potentially boost up the productivity and knowledge acquisition for
+                            humans.</p>
+                        <a href="https://medium.com/data-driven-fiction/human-and-machine-work-together-two-important-intelligent-applications-9e22a1f651a"
+                            target="_blank" class="read-more">Read on Medium</a>
+                    </article>
+                    <article class="blog-post">
+                        <div class="blog-meta">January 26, 2020 • 5 min read</div>
+                        <h3 class="blog-title"
+                            onclick="window.open('https://medium.com/analytics-vidhya/what-learning-systems-do-intelligent-agents-need-reviews-from-deepmind-8ec901de9d70', '_blank')">
+                            What Learning Systems do Intelligent Agents Need? Reviews from DeepMind 2</h3>
+                        <p class="blog-excerpt">We know that there are 2 learning systems. But why do we need 2 separate
+                            learning systems? In this article, we will explain the role of the hippocampus to the slow
+                            integration of new experiences through replay.</p>
+                        <a href="https://medium.com/analytics-vidhya/what-learning-systems-do-intelligent-agents-need-reviews-from-deepmind-8ec901de9d70"
+                            target="_blank" class="read-more">Read on Medium</a>
+                    </article>
+                    <article class="blog-post">
+                        <div class="blog-meta">December 30, 2019 • 5 min read</div>
+                        <h3 class="blog-title"
+                            onclick="window.open('https://medium.com/analytics-vidhya/what-learning-systems-do-intelligent-agents-need-reviews-from-deepmind-81c486050660', '_blank')">
+                            What Learning Systems do Intelligent Agents Need? Reviews from DeepMind 1</h3>
+                        <p class="blog-excerpt">Memory is the data or information retrieved when an intelligent agent
+                            needs it. The ability to retrieve and store memory is one of the features of intelligent
+                            agents. With the theory of Complementary Learning Systems (CLS), an intelligent agent
+                            implements 2 learning systems.</p>
+                        <a href="https://medium.com/analytics-vidhya/what-learning-systems-do-intelligent-agents-need-reviews-from-deepmind-81c486050660"
+                            target="_blank" class="read-more">Read on Medium</a>
+                    </article>
+                    <article class="blog-post">
+                        <div class="blog-meta">November 19, 2019 • 5 min read</div>
+                        <h3 class="blog-title"
+                            onclick="window.open('https://medium.com/@fisherlok/understand-artificial-neural-networks-with-biological-analogy-18a4d76081eb', '_blank')">
+                            Understand artificial neural networks with biological analogy</h3>
+                        <p class="blog-excerpt">Artificial neural network (deep learning may be a fancier name!) is
+                            probably the most popular machine learning model now. You can always hear the words "deep
+                            learning" from everywhere. This is a biologically inspired model and it is good to
+                            understand this model with some biology!</p>
+                        <a href="https://medium.com/@fisherlok/understand-artificial-neural-networks-with-biological-analogy-18a4d76081eb"
+                            target="_blank" class="read-more">Read on Medium</a>
+                    </article>
+                </div>
+                <!-- Comments Section - Commented out for later use
+                <div class="card comments-section">
+                    <h4>Comments</h4>
+                    <form class="comment-form" id="commentForm">
+                        <div class="form-group">
+                            <label class="form-label" for="comment-name">Name</label>
+                            <input type="text" id="comment-name" class="form-input" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="comment-email">Email</label>
+                            <input type="email" id="comment-email" class="form-input" placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="comment-text">Comment</label>
+                            <textarea id="comment-text" class="form-textarea"
+                                placeholder="Share your thoughts..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">Post Comment</button>
+                    </form>
+                    <div class="existing-comments" id="existingComments" style="margin-top: 2rem;">
+                        <div class="comment">
+                            <div class="comment-author">Alex Johnson</div>
+                            <div class="comment-date">March 16, 2024</div>
+                            <div class="comment-text">Great article! Very helpful insights on component architecture.
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <div class="comment-author">Sarah Chen</div>
+                            <div class="comment-date">March 15, 2024</div>
+                            <div class="comment-text">Thanks for sharing! Do you have testing recommendations?</div>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </section>
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                    <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Feel free to reach out to me via email:</p>
+                    <a href="mailto:lokhiufung123@gmail.com"
+                        style="font-size: 1.3rem; color: var(--primary); text-decoration: none; font-weight: 600;">
+                        lokhiufung123@gmail.com
+                    </a>
+                </div>
+
+                <!-- Contact Form - Commented out for later use
+                <div class="card" style="max-width: 600px; margin: 0 auto;">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label class="form-label" for="contact-name">Name</label>
+                            <input type="text" id="contact-name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-subject">Subject</label>
+                            <input type="text" id="contact-subject" name="subject" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" class="form-textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+                -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="assets/js/main.js?v=2" defer></script>
+</body>
+
+</html>

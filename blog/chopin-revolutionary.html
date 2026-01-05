@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chopin's Revolutionary Etude - Fisher Lok</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTTL9SQWM3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TTTL9SQWM3');
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <!-- VexFlow for Sheet Music Rendering -->
+    <script src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
+    <!-- Tone.js for Audio Synthesis -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <style>
+        .blog-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .blog-date {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .blog-content h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Interactive Sheet Music Container */
+        .sheet-music-container {
+            background: #fff;
+            /* Sheet music needs white bg */
+            color: #000;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+            overflow-x: auto;
+        }
+
+        .sheet-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .control-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        .control-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .control-btn.secondary {
+            background: var(--secondary);
+        }
+
+        .control-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .note-annotation {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .highlight-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .back-link::before {
+            content: '←';
+            margin-right: 0.5rem;
+        }
+
+        /* Loading state for audio */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            font-weight: bold;
+            color: var(--primary);
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Fisher Lok</div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#blog" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="section">
+            <div class="container">
+                <a href="../index.html#blog" class="back-link">Back to Blog</a>
+
+                <article class="blog-content">
+                    <header class="blog-header">
+                        <div class="blog-date">November 21, 2025 • 10 min read</div>
+                        <h1>The Sound of Fury</h1>
+                        <p class="subtitle">Deconstructing Chopin's "Revolutionary" Etude Op. 10 No. 12</p>
+                        <div class="blog-tags">
+                            <span class="tag">Music Theory</span>
+                            <span class="tag">Piano</span>
+                            <span class="tag">Interactive</span>
+                        </div>
+                    </header>
+
+                    <p>Few pieces in the piano repertoire capture raw, unbridled emotion quite like Frédéric Chopin's
+                        <strong>Etude Op. 10, No. 12 in C Minor</strong>, widely known as the "Revolutionary Etude."
+                    </p>
+
+                    <p>Legend has it that Chopin composed this piece in 1831 after hearing the news that the Russian
+                        army had crushed the November Uprising in his homeland of Poland. Whether or not the story is
+                        strictly true, the music itself screams with defiance, despair, and heroic struggle.</p>
+
+                    <h2>The Technical Challenge</h2>
+                    <p>While the right hand plays dramatic, declamatory chords, the left hand is tasked with a
+                        relentless, stormy accompaniment. This is not just a melody with backing; it is a study in
+                        left-hand independence and endurance.</p>
+
+                    <div class="highlight-box">
+                        <strong>The Core Technique:</strong> The left hand must maintain a continuous stream of
+                        semiquavers (16th notes) while shaping the phrase dynamically. The challenge is to keep the
+                        wrist loose and use the arm's weight to "roll" through the arpeggios.
+                    </div>
+
+                    <h3>Interactive Analysis: The Opening Run</h3>
+                    <p>The piece begins with a crashing dominant seventh chord (G7), followed by a terrifying descent in
+                        the left hand. Let's look at this opening motif.</p>
+                    <p>Notice the fingering I've highlighted. The standard fingering often requires quick thumb turns,
+                        but keeping the hand compact is key.</p>
+
+                    <div class="sheet-music-container" id="sheet-container-1">
+                        <div class="loading-overlay" id="loading-1">Loading Audio...</div>
+                        <div id="vexflow-1"></div>
+                        <div class="note-annotation">
+                            Measure 1: The "Call to Arms" - A crashing chord followed by a cascading run.
+                        </div>
+                        <div class="sheet-controls">
+                            <button class="control-btn" id="play-btn-1">
+                                <span>▶ Play Excerpt</span>
+                            </button>
+                            <button class="control-btn secondary" id="slow-btn-1">
+                                <span>🐢 Slow Motion</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <h2>Musicality & Expression</h2>
+                    <p>It's easy to treat this Etude as a speed test, but that misses the point. The left hand
+                        represents the "storm" or the "battle," while the right hand delivers the "speech."</p>
+
+                    <p>The key of <strong>C Minor</strong> is significant. For Beethoven, C Minor was the key of "stormy
+                        heroism" (think Symphony No. 5). Chopin inherits this tradition but adds a layer of tragic
+                        nobility.</p>
+
+                    <h3>The Main Theme</h3>
+                    <p>After the introduction, the main theme enters with a dotted rhythm—a "martial" or military
+                        character. It creates a sense of forward momentum and urgency.</p>
+
+                    <div class="sheet-music-container" id="sheet-container-2">
+                        <div class="loading-overlay" id="loading-2">Loading Audio...</div>
+                        <div id="vexflow-2"></div>
+                        <div class="note-annotation">
+                            The Main Theme: Dotted rhythms against the relentless left-hand storm.
+                        </div>
+                        <div class="sheet-controls">
+                            <button class="control-btn" id="play-btn-2">
+                                <span>▶ Play Theme</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <h2>Practice Tips</h2>
+                    <ul>
+                        <li><strong>Rhythm Practice:</strong> Practice the left hand runs in dotted rhythms (long-short,
+                            then short-long) to even out the touch.</li>
+                        <li><strong>Grouping:</strong> Don't think of individual notes. Group the left hand into 4-note
+                            gestures. The first note of each group is the "anchor."</li>
+                        <li><strong>Pedaling:</strong> Use the pedal to add resonance to the right-hand chords, but
+                            clear it frequently to prevent the left hand from becoming muddy.</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+                    <p>The Revolutionary Etude is more than just a finger-twister. It is a historical document of rage
+                        and sorrow, written in the universal language of music. Mastering it requires not just strong
+                        fingers, but a passionate heart.</p>
+
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Fisher Lok. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/chopin.js"></script>
+    <script>
+        // Scroll progress bar (reused from main)
+        window.addEventListener("scroll", function () {
+            var e = document.getElementById("scrollProgress");
+            var t = document.body.scrollTop || document.documentElement.scrollTop;
+            var n = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var a = t / n * 100;
+            e.style.width = a + "%";
+        });
+
+        // Nav background
+        window.addEventListener("scroll", function () {
+            var n = document.querySelector("nav");
+            window.scrollY > 50 ? n.classList.add("scrolled") : n.classList.remove("scrolled");
+        });
+    </script>
+</body>
+
+</html>

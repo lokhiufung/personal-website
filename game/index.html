@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HK Cat Adventure - Fisher Lok</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <style>
+        body {
+            overflow: hidden;
+            /* Prevent scrolling while playing */
+            background-color: #000;
+        }
+
+        #game-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111;
+        }
+
+        canvas {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            image-rendering: pixelated;
+            /* Keep pixel art crisp */
+        }
+
+        .game-ui {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .controls-hint {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Courier New', Courier, monospace;
+            pointer-events: none;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            backdrop-filter: blur(5px);
+            transition: background 0.3s;
+            z-index: 20;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../index.html" class="back-btn">← Back to Home</a>
+
+    <div id="game-container">
+        <div class="game-ui">
+            <h1>HK Cat Adventure</h1>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="controls-hint">
+            Use ARROW KEYS to Move • SPACE to Jump
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+
+</html>

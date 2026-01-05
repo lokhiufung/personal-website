@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fermat's Little Theorem - Fisher Lok</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTTL9SQWM3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TTTL9SQWM3');
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .blog-date {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .blog-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .math-block {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .back-link::before {
+            content: '←';
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Your Name</div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#blog" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="section">
+            <div class="container">
+                <a href="../index.html#blog" class="back-link">Back to Blog</a>
+
+                <article class="blog-content">
+                    <header class="blog-header">
+                        <div class="blog-date">November 19, 2025 • 5 min read</div>
+                        <h1>Fermat's Little Theorem</h1>
+                        <div class="blog-tags">
+                            <span class="tag">Number Theory</span>
+                            <span class="tag">Math</span>
+                            <span class="tag">Cryptography</span>
+                        </div>
+                    </header>
+
+                    <p>Number theory is often called the "Queen of Mathematics" for its purity and elegance. Among its
+                        many gems, <strong>Fermat's Little Theorem</strong> stands out as a fundamental result that has
+                        surprising applications in the modern world, particularly in cryptography.</p>
+
+                    <h2>The Theorem</h2>
+                    <p>Pierre de Fermat, a French lawyer and amateur mathematician, stated this theorem in 1640. It
+                        describes a property of integers modulo a prime number.</p>
+
+                    <div class="math-block">
+                        \[ a^{p-1} \equiv 1 \pmod{p} \]
+                    </div>
+
+                    <p>Where:</p>
+                    <ul>
+                        <li>\( p \) is a prime number.</li>
+                        <li>\( a \) is any integer not divisible by \( p \).</li>
+                    </ul>
+
+                    <p>In simpler terms, if you take any number \( a \), raise it to the power of \( p-1 \), and divide
+                        by \( p \), the remainder will always be 1.</p>
+
+                    <h2>A Concrete Example</h2>
+                    <p>Let's test this with some numbers. Let \( p = 7 \) (which is prime) and \( a = 3 \).</p>
+                    <p>According to the theorem, \( 3^{7-1} \) should be congruent to \( 1 \pmod{7} \).</p>
+
+                    <div class="math-block">
+                        \[ 3^6 = 729 \]
+                        \[ 729 \div 7 = 104 \text{ with a remainder of } 1 \]
+                        \[ 729 \equiv 1 \pmod{7} \]
+                    </div>
+
+                    <p>It works! You can try this with other values, like \( a = 4, p = 5 \):</p>
+                    <p>\( 4^{5-1} = 4^4 = 256 \). Since \( 256 = 5 \times 51 + 1 \), we have \( 256 \equiv 1 \pmod{5}
+                        \).</p>
+
+                    <h2>Why is this Important?</h2>
+                    <p>While it might seem like a neat party trick for mathematicians, Fermat's Little Theorem is the
+                        backbone of the <strong>RSA encryption algorithm</strong>, which secures much of the internet
+                        today. It allows for the creation of public and private keys, ensuring that your credit card
+                        information and private messages stay secure.</p>
+
+                    <p>The theorem also helps in <strong>primality testing</strong>—checking if a very large number is
+                        prime, which is crucial for generating those cryptographic keys.</p>
+
+                    <h2>Conclusion</h2>
+                    <p>Fermat's Little Theorem is a beautiful example of how abstract mathematics can have profound
+                        real-world impact. It bridges the gap between 17th-century curiosity and 21st-century digital
+                        security.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        // Scroll progress bar
+        window.addEventListener("scroll", function () {
+            var e = document.getElementById("scrollProgress");
+            var t = document.body.scrollTop || document.documentElement.scrollTop;
+            var n = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var a = t / n * 100;
+            e.style.width = a + "%";
+        });
+
+        // Nav background on scroll
+        window.addEventListener("scroll", function () {
+            var n = document.querySelector("nav");
+            window.scrollY > 50 ? n.classList.add("scrolled") : n.classList.remove("scrolled");
+        });
+
+        // Simple fade in for content
+        document.addEventListener("DOMContentLoaded", function () {
+            const content = document.querySelector('.blog-content');
+            content.style.opacity = '0';
+            content.style.transform = 'translateY(20px)';
+            content.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+
+            setTimeout(() => {
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>
