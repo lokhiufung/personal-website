@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fisher Lok - Developer & Creator</title>
+    <meta name="description"
+        content="Fisher Lok is a quantitative developer and trading systems engineer working across AI, research infrastructure, and live algorithmic trading.">
+    <title>Fisher Lok — Quantitative Developer & Trading Systems Engineer</title>
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTTL9SQWM3"></script>
@@ -15,7 +17,7 @@
         gtag('config', 'G-TTTL9SQWM3');
     </script>
 
-    <link rel="stylesheet" href="assets/css/styles.css?v=2">
+    <link rel="stylesheet" href="assets/css/styles.css?v=3">
 </head>
 
 <body>
@@ -24,10 +26,11 @@
         <div class="nav-container">
             <div class="logo">Fisher Lok</div>
             <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li class="mobile-optional-nav"><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="resume/index.html" class="nav-link" data-destination="resume">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#blog" class="nav-link">Blog</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="mobile-optional-nav"><a href="#contact" class="nav-link">Contact</a></li>
                 <li>
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
                         <div class="theme-toggle-slider">☀️</div>
@@ -39,11 +42,14 @@
     <main>
         <section id="home" class="hero section">
             <div class="container">
+                <p class="hero-kicker">Quantitative Developer · Trading Systems Engineer</p>
                 <h1>Hello, I'm Fisher Lok</h1>
-                <p>Quantitative research in the LLM era. Pushing small teams to their absolute limits—surpassing what
-                    traditional expert approaches thought possible.
-                    The future belongs to those who move fast and leverage intelligence at scale.</p>
-                <a href="#projects" class="cta-button">View My Work</a>
+                <p>I work across quantitative research, AI product development, and live trading infrastructure—turning
+                    ideas into testable systems, then making the path from research to deployment repeatable.</p>
+                <div class="hero-actions">
+                    <a href="resume/index.html" class="cta-button" data-destination="resume">View My Experience</a>
+                    <a href="resume/index.html" class="cta-button cta-button-secondary">Full Resume</a>
+                </div>
             </div>
         </section>
         <section id="projects" class="section">
@@ -85,6 +91,7 @@
                         <div class="project-links">
                             <a href="https://github.com/lokhiufung/trading-data" target="_blank"
                                 class="project-link">GitHub</a>
+                            <a href="services/trading-infrastructure-engineering.html" class="project-link">Services</a>
                         </div>
                     </div>
                     <div class="card project-card">
@@ -143,6 +150,15 @@
             <div class="container">
                 <h2 class="section-title">Latest Blog Posts</h2>
                 <div class="blog-posts">
+                    <article class="blog-post">
+                        <div class="blog-meta">August 25, 2026 • 12 min read</div>
+                        <h3 class="blog-title"
+                            onclick="window.location.href='blog/why-the-world-can-look-simple-from-far-away.html'">Why
+                            the World Can Look Simple From Far Away</h3>
+                        <p class="blog-excerpt">A beginner-friendly journey through scaling laws, universality, and
+                            why neat patterns in biology, markets, AI, and prime numbers do not predict every detail.</p>
+                        <a href="blog/why-the-world-can-look-simple-from-far-away.html" class="read-more">Read more</a>
+                    </article>
                     <article class="blog-post">
                         <div class="blog-meta">November 21, 2025 • 10 min read</div>
                         <h3 class="blog-title" onclick="window.location.href='blog/chopin-revolutionary.html'">The Sound
@@ -300,7 +316,7 @@
     </main>
     <footer>
         <div class="container">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p>&copy; 2026 Fisher Lok. Built around curiosity, systems, and useful work.</p>
         </div>
     </footer>
     <script src="assets/js/main.js?v=2" defer></script>

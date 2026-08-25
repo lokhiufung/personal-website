@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A beginner-friendly guide to scaling laws, universality, and why simple large-scale patterns do not make individual events predictable.">
+    <title>Why the World Can Look Simple From Far Away - Fisher Lok</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTTL9SQWM3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { window.dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TTTL9SQWM3');
+    </script>
+
+    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .blog-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 3rem;
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .blog-date {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            max-width: 700px;
+            margin: 1rem auto 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .blog-content h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .blog-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.85;
+        }
+
+        .blog-content a {
+            color: var(--primary);
+        }
+
+        .lead {
+            font-size: 1.25rem !important;
+            line-height: 1.75 !important;
+        }
+
+        .highlight-box {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent);
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .scale-visual {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1rem;
+            align-items: stretch;
+            margin: 2.5rem 0;
+        }
+
+        .scale-card {
+            padding: 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .scale-card strong {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .scale-card p {
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .scale-arrow {
+            align-self: center;
+            color: var(--accent);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .evidence-card {
+            padding: 1.25rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--bg-secondary);
+        }
+
+        .evidence-card strong {
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+
+        .evidence-card p {
+            margin: 0;
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .status-established {
+            border-top: 4px solid #16a34a;
+        }
+
+        .status-empirical {
+            border-top: 4px solid #2563eb;
+        }
+
+        .status-conjectural {
+            border-top: 4px solid #d97706;
+        }
+
+        .status-hypothesis {
+            border-top: 4px solid #9333ea;
+        }
+
+        .example-label {
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            padding: 0.25rem 0.65rem;
+            color: var(--primary);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .reader-check {
+            margin: 2rem 0;
+            padding: 1.5rem 1.5rem 1.5rem 3rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            line-height: 1.75;
+        }
+
+        .reader-check li {
+            margin-bottom: 0.75rem;
+            padding-left: 0.25rem;
+        }
+
+        .sources {
+            padding-left: 1.4rem;
+            font-size: 0.98rem;
+            line-height: 1.65;
+        }
+
+        .sources li {
+            margin-bottom: 0.9rem;
+        }
+
+        .source-note {
+            color: var(--text-secondary);
+            font-size: 0.95rem !important;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+
+        .back-link::before {
+            content: '←';
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 720px) {
+            .blog-content {
+                padding: 1.5rem;
+            }
+
+            .scale-visual,
+            .evidence-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .scale-arrow {
+                transform: rotate(90deg);
+                justify-self: center;
+            }
+
+            .nav-links {
+                gap: 0.8rem;
+            }
+
+            .nav-links li:nth-child(2),
+            .nav-links li:nth-child(4) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Fisher Lok</div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#blog" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <span class="theme-toggle-slider">☀️</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <a href="../index.html#blog" class="back-link">Back to Blog</a>
+
+                <article class="blog-content">
+                    <header class="blog-header">
+                        <div class="blog-date">August 25, 2026 • 12 min read</div>
+                        <h1>Why the World Can Look Simple From Far Away</h1>
+                        <p class="subtitle">A beginner's guide to scaling laws, universality, and why a neat pattern
+                            does not necessarily predict what happens next.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Complexity</span>
+                            <span class="tag">Scaling Laws</span>
+                            <span class="tag">Beginner Friendly</span>
+                        </div>
+                    </header>
+
+                    <p class="lead">Imagine looking down at a city from an airplane. You see roads, neighborhoods,
+                        and streams of traffic. The whole city seems to have a shape. Now land, stand at one junction,
+                        and try to predict exactly which driver will change lanes in the next ten seconds. Suddenly,
+                        the simple picture disappears.</p>
+
+                    <p>That contrast is the subject of a fascinating survey I recently read. It travels through
+                        biology, financial markets, artificial intelligence, prime numbers, physics, and computer
+                        science. At first, these topics seem to have almost nothing in common. Yet each contains a
+                        similar tension: the big picture can follow a compact rule while the small details remain
+                        stubbornly difficult.</p>
+
+                    <div class="highlight-box">
+                        <p><strong>The central idea:</strong> A crowd may be predictable even when the people inside it
+                            are not. A simple rule for the average does not automatically give us a shortcut to every
+                            individual outcome.</p>
+                    </div>
+
+                    <p>The survey calls this <strong>macro-compressibility with micro-irreducibility</strong>. That is
+                        a formidable phrase, but the intuition is friendly. “Macro” means the large-scale view.
+                        “Compressible” means we can summarize it with a short rule. “Micro” means the individual
+                        details. “Irreducible” means there may be no known shortcut for producing those details one by
+                        one.</p>
+
+                    <div class="scale-visual" aria-label="The difference between microscopic and macroscopic views">
+                        <div class="scale-card">
+                            <strong>Up close: the micro view</strong>
+                            <p>One organism, one trade, one AI response, one prime gap. Many details matter, and exact
+                                prediction is difficult.</p>
+                        </div>
+                        <div class="scale-arrow" aria-hidden="true">→</div>
+                        <div class="scale-card">
+                            <strong>Zoomed out: the macro view</strong>
+                            <p>Average metabolism, typical market impact, model loss, prime density. A compact pattern
+                                can emerge.</p>
+                        </div>
+                    </div>
+
+                    <h2>First, what is a scaling law?</h2>
+
+                    <p>A scaling law describes how one quantity changes when another quantity becomes larger. Suppose
+                        we compare animals of different sizes. As body mass increases, how does energy use increase?
+                        Or suppose we train larger AI models. As we add data and computing power, how does their average
+                        error change?</p>
+
+                    <p>A common mathematical form is a <strong>power law</strong>:</p>
+
+                    <div class="highlight-box">
+                        <p>$$Y \approx A x^\alpha$$</p>
+                        <p>Here, $x$ is the thing we change, $Y$ is the result we measure, $A$ sets the overall scale,
+                            and the exponent $\alpha$ tells us how quickly the result grows or shrinks.</p>
+                    </div>
+
+                    <p>If $\alpha=1$, doubling $x$ doubles $Y$. If $\alpha=2$, doubling $x$ makes $Y$ four times as
+                        large. If $\alpha=1/2$, doubling $x$ increases $Y$ by only about 41 percent. The useful feature
+                        is that one exponent can summarize behavior across many sizes.</p>
+
+                    <p>Power laws are appealing because they turn a cloud of observations into a short sentence. But
+                        they are also easy to oversell. A roughly straight line on a log–log chart may cover only a
+                        limited range. The slope can change when the data, definitions, or measurement method changes.
+                        A good fit is evidence for a pattern; it is not automatically a law of nature.</p>
+
+                    <h2>Scaling is not the same as universality</h2>
+
+                    <p>In everyday speech, “universal” means something happens everywhere. In physics, the word has a
+                        stricter meaning. Near certain phase transitions—such as the point where a magnet loses its
+                        magnetism—very different materials can display the same large-scale behavior.</p>
+
+                    <p>Physicists explain this using the <strong>renormalization group</strong>. Imagine repeatedly
+                        blurring a high-resolution image. Tiny scratches and individual pixels disappear. What remains
+                        are large shapes. Near a critical point, repeated “blurring” of a physical system can make many
+                        microscopic details irrelevant. Systems with the same important features, such as dimension and
+                        symmetry, can then approach the same large-scale pattern.</p>
+
+                    <p>This is genuine universality because it comes with more than a similar-looking exponent. There
+                        is a defined way to zoom out, a limiting regime, and a mechanism explaining why the discarded
+                        details stop mattering. Outside this setting, it is safer to say <em>empirical scaling
+                            regularity</em> unless an equally strong explanation exists.</p>
+
+                    <h2>One article, four levels of confidence</h2>
+
+                    <p>The most helpful habit in the survey is that it does not put every claim on the same shelf. It
+                        separates results into four levels:</p>
+
+                    <div class="evidence-grid">
+                        <div class="evidence-card status-established">
+                            <strong>Established</strong>
+                            <p>A proved theorem or a widely replicated measurement with a clearly stated range.</p>
+                        </div>
+                        <div class="evidence-card status-empirical">
+                            <strong>Empirical regularity</strong>
+                            <p>A repeated pattern in data that still depends on the model and measurement choices.</p>
+                        </div>
+                        <div class="evidence-card status-conjectural">
+                            <strong>Conditional or conjectural</strong>
+                            <p>A conclusion that depends on an assumption or a limiting claim that is not yet proved.</p>
+                        </div>
+                        <div class="evidence-card status-hypothesis">
+                            <strong>Hypothesis</strong>
+                            <p>A proposed way to organize ideas that must still earn support through tests.</p>
+                        </div>
+                    </div>
+
+                    <p>This distinction matters because a theorem about prime density is not the same kind of knowledge
+                        as a curve fitted to financial data. Both can be useful. They simply justify different levels
+                        of confidence.</p>
+
+                    <h2>Example 1: animals do not obey one magic exponent</h2>
+
+                    <span class="example-label">Biology</span>
+                    <p>Larger animals generally use more energy than smaller animals, but energy use does not rise in
+                        direct proportion to body mass. This relationship is called <strong>metabolic allometry</strong>.
+                        It is often written as $B=aM^b$, where $B$ is metabolic rate and $M$ is body mass.</p>
+
+                    <p>A famous idea known as Kleiber's law places the exponent $b$ near three quarters. An influential
+                        model linked this pattern to the branching networks that deliver resources around an animal's
+                        body. The result is elegant, memorable, and genuinely useful.</p>
+
+                    <p>But “three quarters for every living thing” is too strong. Research finds that the exponent
+                        varies with species group, temperature, age, activity, and physiological state. The right lesson
+                        is not that scaling failed. It is that a compact relationship can describe a regime without
+                        being a universal constant.</p>
+
+                    <p>Body mass may help us estimate the average energy demand of a kind of animal. It will not tell us
+                        the exact metabolic activity of one particular animal at 3:17 p.m. The macro pattern survives;
+                        the micro event needs more information.</p>
+
+                    <h2>Example 2: markets have patterns, not crystal balls</h2>
+
+                    <span class="example-label">Finance</span>
+                    <p>Financial markets produce several recurring statistical patterns. Large price movements occur
+                        more often than a simple bell curve would predict. Volatile days tend to arrive in clusters.
+                        Buy and sell orders can remain correlated over long periods.</p>
+
+                    <p>One especially interesting regularity concerns <strong>market impact</strong>: how much a large
+                        sequence of trades tends to move the price. Across many datasets, average impact is often close
+                        to the square root of the order's size relative to normal market volume. In plain language,
+                        making an order four times as large tends to produce roughly twice the average impact, after
+                        suitable normalization.</p>
+
+                    <p>This does not mean every order follows the curve. Researchers must decide where one large order
+                        begins and ends, how to measure normal volume, and how to adjust for volatility and market
+                        conditions. Change those choices and the fitted curve can change.</p>
+
+                    <p>Most importantly, an average impact curve is not a machine for predicting the next price move.
+                        It summarizes many trades under specified conditions. Knowing the shape of traffic at rush hour
+                        does not tell us what one driver will do at one junction.</p>
+
+                    <h2>Example 3: bigger AI models improve along a curve</h2>
+
+                    <span class="example-label">Artificial intelligence</span>
+                    <p>Large language models also show scaling relationships. Over a controlled range, their average
+                        prediction error—usually measured as a loss—often falls smoothly as researchers increase model
+                        size, training data, and computing power.</p>
+
+                    <p>These curves are valuable engineering tools. They can help a team estimate how much improvement
+                        to expect from a larger training run and how to balance the amount of data against the number of
+                        model parameters. This is macro-compressibility in action: a complicated training process is
+                        summarized by a few resource variables.</p>
+
+                    <p>However, the curve depends on the architecture, data mixture, optimizer, training setup, and the
+                        definition of compute. It describes average performance within a regime. It does not tell us
+                        what internal idea a model has learned, whether a rare capability will appear, or exactly how
+                        the model will answer your next prompt.</p>
+
+                    <p>So AI scaling laws are closer to carefully calibrated engineering curves than to a proven
+                        universality class in physics. They are reproducible and useful without being magic.</p>
+
+                    <h2>Example 4: we know how dense the primes are, but not the next gap</h2>
+
+                    <span class="example-label">Number theory</span>
+                    <p>Prime numbers are integers divisible only by 1 and themselves: 2, 3, 5, 7, 11, and so on. They
+                        are completely deterministic. Yet their local spacing looks irregular enough that probability
+                        is often useful for describing it.</p>
+
+                    <p>The <strong>prime number theorem</strong> is an established result. It says that the number of
+                        primes up to a large number $x$ is approximately $x/\log x$. From far away, this gives us an
+                        excellent map of prime density. It also tells us that the average gap between nearby primes
+                        around $x$ is roughly $\log x$.</p>
+
+                    <p>But the theorem does not tell us the exact size of the next gap. Probabilistic models suggest
+                        useful distributions for ordinary and extreme gaps, yet some of the strongest versions depend
+                        on unproved conjectures. The primes are not secretly random; rather, random models can capture
+                        selected statistics while arithmetic constraints still matter.</p>
+
+                    <p>There is an even stranger connection. The spacings between zeros of the Riemann zeta function
+                        show remarkable statistical agreement with eigenvalues of certain random matrices. Numerical
+                        evidence is strong, and parts of the theory are established, but the complete connection and
+                        the Riemann hypothesis remain unproved. This is a perfect case for careful labels: striking
+                        evidence is not the same as a completed theorem.</p>
+
+                    <h2>“Hard to predict” does not automatically mean P versus NP</h2>
+
+                    <p>This is where several attractive ideas are often mixed together. <strong>P versus NP</strong> is
+                        a precise question about decision problems. Roughly speaking, P contains problems that a
+                        computer can solve efficiently as the input grows. NP contains problems where, if the answer is
+                        “yes,” a proposed solution can be checked efficiently. Whether every efficiently checkable
+                        problem is also efficiently solvable remains unknown.</p>
+
+                    <p><strong>Computational irreducibility</strong> is broader and less formal. It suggests that for
+                        some processes, the fastest way to learn a future state may be to run the process step by step.
+                        This is an important idea, but it is not another name for P not equaling NP.</p>
+
+                    <p>Likewise, random constraint problems can show phase transitions. As a random 3-SAT problem gains
+                        more constraints, it moves from usually solvable to usually impossible, and instances near the
+                        boundary can be difficult for algorithms. That resemblance to a physical phase transition is
+                        useful. It still does not settle a worst-case statement such as P versus NP. In fact, random
+                        2-SAT has a sharp threshold even though 2-SAT belongs to P.</p>
+
+                    <p>The same warning applies to primes. A density formula not revealing the next prime does not make
+                        primality testing NP-complete. We have a deterministic polynomial-time algorithm for testing
+                        whether a number is prime. “My coarse formula cannot predict the next event” and “no efficient
+                        algorithm can solve this formal problem” are entirely different claims.</p>
+
+                    <h2>The useful synthesis: simple above, difficult below</h2>
+
+                    <p>We can now return to the survey's big proposal. A system is <strong>macro-compressible</strong>
+                        when a compact model predicts a large-scale quantity over a clearly stated range. It might
+                        predict average metabolism, average market impact, language-model loss, or prime density.</p>
+
+                    <p>The same system may be <strong>micro-irreducible</strong> relative to a specific task if we know
+                        no comparably efficient shortcut for obtaining an exact trajectory, answer, or next event. The
+                        phrase “relative to a specific task” is essential. Without naming the task, the input, and what
+                        counts as efficient, irreducibility is only a metaphor.</p>
+
+                    <p>The proposal is not that biology, markets, AI, and primes share one hidden equation. It is a way
+                        to ask better questions across fields. What are we averaging? What survives when we zoom out?
+                        What exact outcome are we trying to compute? How strong is the evidence for each claim?</p>
+
+                    <div class="highlight-box">
+                        <p><strong>A short summary:</strong> Description and computation are different jobs. A small
+                            equation may describe a distribution very well while offering no shortcut to a particular
+                            member of that distribution.</p>
+                    </div>
+
+                    <h2>How to read the next “universal law” headline</h2>
+
+                    <p>When a chart or headline claims that the same law appears everywhere, I now want to ask four
+                        questions:</p>
+
+                    <ol class="reader-check">
+                        <li><strong>What exactly is being predicted?</strong> An average, a distribution, an individual
+                            event, or a worst-case computation?</li>
+                        <li><strong>Over what range?</strong> A relationship that works across ten observations may fail
+                            outside those observations.</li>
+                        <li><strong>What changes the result?</strong> Definitions, normalization, sampling, temperature,
+                            architecture, or market conditions may alter the exponent.</li>
+                        <li><strong>What kind of evidence is it?</strong> A theorem, a replicated empirical fit, a result
+                            conditional on a conjecture, or a new hypothesis?</li>
+                    </ol>
+
+                    <p>A fifth question is useful when someone uses the word “universal”: is there a mechanism showing
+                        why microscopic differences disappear, or do two lines merely look similar? Similarity can be a
+                        productive clue. It should not borrow the proof status of a different field.</p>
+
+                    <h2>What I took away</h2>
+
+                    <p>The world can be regular without being simple all the way down. Physics gives the strongest
+                        example: at a critical point, a genuine theory explains why different microscopic systems share
+                        large-scale behavior. Biology, markets, and AI offer useful but conditional scaling patterns.
+                        Number theory combines rigorous global laws with conjectural local models. Computer science
+                        reminds us to define “difficulty” before making claims about it.</p>
+
+                    <p>That is a more modest conclusion than “everything follows one universal mathematics,” but I
+                        find it more interesting. It tells us why prediction can succeed and fail at the same time. We
+                        can understand the shape of a forest without knowing the position of every future leaf. We can
+                        compress the crowd while each individual story remains open.</p>
+
+                    <h2>Selected sources from the survey</h2>
+
+                    <p class="source-note">This article is a non-technical introduction based on the survey
+                        <em>Universality, Scaling, and Complexity Across Living, Economic, Computational, and Arithmetic
+                            Systems</em>, whose literature was checked on August 24, 2026. These links are starting
+                        points rather than a complete bibliography.</p>
+
+                    <ol class="sources">
+                        <li>Wilson, K. G. (1975). <a href="https://doi.org/10.1103/RevModPhys.47.773">The
+                                renormalization group: Critical phenomena and the Kondo problem</a>.</li>
+                        <li>White, C. R., Cassey, P., &amp; Blackburn, T. M. (2007). <a
+                                href="https://doi.org/10.1890/06-1408">Allometric exponents do not support a universal
+                                metabolic allometry</a>.</li>
+                        <li>Tóth, B., et al. (2011). <a href="https://doi.org/10.1103/PhysRevX.1.021006">Anomalous
+                                price impact and the critical nature of liquidity in financial markets</a>.</li>
+                        <li>Kaplan, J., et al. (2020). <a href="https://arxiv.org/abs/2001.08361">Scaling laws for
+                                neural language models</a>.</li>
+                        <li>Hoffmann, J., et al. (2022). <a href="https://arxiv.org/abs/2203.15556">Training
+                                compute-optimal large language models</a>.</li>
+                        <li>Banks, W. D., Ford, K., &amp; Tao, T. (2023). <a
+                                href="https://doi.org/10.1007/s00222-023-01199-0">Large prime gaps and probabilistic
+                                models</a>.</li>
+                        <li>Agrawal, M., Kayal, N., &amp; Saxena, N. (2004). <a
+                                href="https://doi.org/10.4007/annals.2004.160.781">PRIMES is in P</a>.</li>
+                        <li>Monasson, R., et al. (1999). <a href="https://doi.org/10.1038/22055">Determining
+                                computational complexity from characteristic phase transitions</a>.</li>
+                    </ol>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Fisher Lok. Built around curiosity, systems, and useful work.</p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js?v=2" defer></script>
+</body>
+
+</html>
