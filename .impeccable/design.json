@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-28T00:00:00+08:00",
+  "title": "Design System: Fisher Lok Precision Calibration Console",
+  "extensions": {
+    "colorMeta": {
+      "canvas": { "role": "neutral", "displayName": "Cool Canvas", "canonical": "#f5f7fa", "tonalRamp": ["#1b2431", "#2e3b4d", "#47566a", "#64748a", "#8291a5", "#aab6c5", "#d4dce7", "#f5f7fa"] },
+      "surface": { "role": "neutral", "displayName": "Evidence White", "canonical": "#ffffff", "tonalRamp": ["#1e252d", "#343c45", "#4d5660", "#68727c", "#858e98", "#aeb6be", "#d7dce0", "#ffffff"] },
+      "surface-subtle": { "role": "neutral", "displayName": "Quiet Blue-Gray", "canonical": "#edf1f6", "tonalRamp": ["#18222f", "#2c3949", "#435267", "#5f7085", "#7d8ea3", "#a4b1c1", "#cbd5e1", "#edf1f6"] },
+      "surface-raised": { "role": "neutral", "displayName": "Raised White", "canonical": "#ffffff", "tonalRamp": ["#1e252d", "#343c45", "#4d5660", "#68727c", "#858e98", "#aeb6be", "#d7dce0", "#ffffff"] },
+      "ink": { "role": "neutral", "displayName": "Graphite Ink", "canonical": "#111722", "tonalRamp": ["#111722", "#1c2635", "#2c394c", "#425167", "#617188", "#8996a8", "#b6c0cd", "#eef1f5"] },
+      "ink-soft": { "role": "neutral", "displayName": "Soft Graphite", "canonical": "#4c586b", "tonalRamp": ["#26303d", "#364354", "#4c586b", "#657287", "#818e9f", "#a1adbb", "#c4ccd5", "#eef1f5"] },
+      "ink-faint": { "role": "neutral", "displayName": "Faint Graphite", "canonical": "#5f6b7e", "tonalRamp": ["#303b4c", "#465265", "#5f6b7e", "#778396", "#939eae", "#b2bbc7", "#d0d6dd", "#f1f3f6"] },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#d4dce7", "tonalRamp": ["#354253", "#4f5d6e", "#69788a", "#8492a2", "#a0adbb", "#b9c4d0", "#d4dce7", "#f7f9fb"] },
+      "line-strong": { "role": "neutral", "displayName": "Strong Hairline", "canonical": "#aeb9c8", "tonalRamp": ["#293644", "#415064", "#5d6c81", "#79889b", "#96a4b5", "#aeb9c8", "#d3dae2", "#f5f7f9"] },
+      "accent": { "role": "primary", "displayName": "Calibration Cobalt", "canonical": "#145cff", "tonalRamp": ["#06163b", "#092a72", "#0d40ad", "#145cff", "#4b83ff", "#80a8ff", "#b6ccff", "#e7eeff"] },
+      "accent-strong": { "role": "primary", "displayName": "Deep Cobalt", "canonical": "#0049d8", "tonalRamp": ["#03102e", "#05245f", "#063797", "#0049d8", "#3b75ea", "#739cff", "#a9c2ff", "#dbe6ff"] },
+      "accent-soft": { "role": "primary", "displayName": "Cobalt Wash", "canonical": "#e7eeff", "tonalRamp": ["#09183a", "#203a79", "#4165b4", "#6688d2", "#8fa9e6", "#b4c8f2", "#d2defa", "#e7eeff"] },
+      "accent-ink": { "role": "neutral", "displayName": "Action White", "canonical": "#ffffff", "tonalRamp": ["#1e252d", "#343c45", "#4d5660", "#68727c", "#858e98", "#aeb6be", "#d7dce0", "#ffffff"] },
+      "night": { "role": "tertiary", "displayName": "Midnight Reading Field", "canonical": "#0a101b", "tonalRamp": ["#0a101b", "#121c2b", "#1c2a3d", "#2b3c53", "#455a74", "#687d96", "#9daebe", "#dfe6ed"] },
+      "night-raised": { "role": "tertiary", "displayName": "Night Raised Surface", "canonical": "#101a29", "tonalRamp": ["#101a29", "#19283b", "#24374d", "#354c64", "#506980", "#71869b", "#a0b1bf", "#e0e7ed"] },
+      "night-ink": { "role": "neutral", "displayName": "Night Ink", "canonical": "#f4f7fb", "tonalRamp": ["#17202d", "#2c3848", "#455264", "#637184", "#8290a0", "#a3afbd", "#c9d1da", "#f4f7fb"] },
+      "night-soft": { "role": "neutral", "displayName": "Night Soft", "canonical": "#b2bfd0", "tonalRamp": ["#273547", "#3f5063", "#596b80", "#71859b", "#8ca0b4", "#b2bfd0", "#d5dce4", "#f3f6f9"] },
+      "focus": { "role": "primary", "displayName": "Accessible Focus Blue", "canonical": "#0b55f5", "tonalRamp": ["#061537", "#09266b", "#0b3da6", "#0b55f5", "#4780ff", "#7fa6ff", "#b5caff", "#e6edff"] },
+      "dark-canvas": { "role": "neutral", "displayName": "Dark Canvas", "canonical": "#080c13", "tonalRamp": ["#080c13", "#111a27", "#1b2839", "#2a3a4e", "#42556d", "#667b94", "#9aaebe", "#dfe7ef"] },
+      "dark-surface": { "role": "neutral", "displayName": "Dark Surface", "canonical": "#0d141f", "tonalRamp": ["#0d141f", "#172334", "#22344a", "#344b63", "#506a82", "#738ca2", "#a4b6c3", "#e1e9ef"] },
+      "dark-surface-subtle": { "role": "neutral", "displayName": "Dark Quiet Surface", "canonical": "#141e2c", "tonalRamp": ["#141e2c", "#1e2d40", "#2c4057", "#3d5770", "#5a738a", "#7e96aa", "#aebfca", "#e4ebf0"] },
+      "dark-surface-raised": { "role": "neutral", "displayName": "Dark Raised Surface", "canonical": "#111a27", "tonalRamp": ["#111a27", "#1b293b", "#26394f", "#38516b", "#546f88", "#7891a7", "#a8bac6", "#e3ebf1"] },
+      "dark-ink-soft": { "role": "neutral", "displayName": "Dark Soft Graphite", "canonical": "#b6c1d0", "tonalRamp": ["#263446", "#3c4d61", "#53667c", "#6d8197", "#899caf", "#b6c1d0", "#d9e0e7", "#f4f7fa"] },
+      "dark-ink-faint": { "role": "neutral", "displayName": "Dark Faint Graphite", "canonical": "#8d9bad", "tonalRamp": ["#202d3d", "#344457", "#4b5d72", "#62758a", "#788b9f", "#8d9bad", "#c2cbd4", "#eff3f6"] },
+      "dark-line": { "role": "neutral", "displayName": "Dark Hairline", "canonical": "#253143", "tonalRamp": ["#253143", "#35475c", "#465b70", "#5d7184", "#74899a", "#9aaab8", "#c4ced6", "#eaf0f4"] },
+      "dark-line-strong": { "role": "neutral", "displayName": "Dark Strong Hairline", "canonical": "#3d4b60", "tonalRamp": ["#3d4b60", "#4e5f74", "#60738a", "#75889c", "#8c9ead", "#aab8c4", "#cbd5dd", "#edf2f5"] },
+      "dark-accent": { "role": "primary", "displayName": "Night Cobalt", "canonical": "#6f98ff", "tonalRamp": ["#101e48", "#203c82", "#3b62ba", "#6f98ff", "#91afff", "#aec5ff", "#cbd9ff", "#e8efff"] },
+      "dark-accent-strong": { "role": "primary", "displayName": "Night Deep Cobalt", "canonical": "#8badff", "tonalRamp": ["#182959", "#2d4a91", "#5072c3", "#8badff", "#a5bdff", "#bed0ff", "#d6e2ff", "#eff4ff"] },
+      "dark-accent-soft": { "role": "primary", "displayName": "Night Cobalt Wash", "canonical": "#17274a", "tonalRamp": ["#17274a", "#293d6c", "#3e5790", "#5b77b4", "#7c98cf", "#9eb5e2", "#c3d2f0", "#e5ecfb"] },
+      "dark-accent-ink": { "role": "neutral", "displayName": "Night Action Ink", "canonical": "#08101e", "tonalRamp": ["#08101e", "#152338", "#253950", "#3f5970", "#607b91", "#879eaf", "#b6c5d0", "#e5edf2"] },
+      "dark-focus": { "role": "primary", "displayName": "Night Focus Blue", "canonical": "#8badff", "tonalRamp": ["#182959", "#2d4a91", "#5072c3", "#8badff", "#a5bdff", "#bed0ff", "#d6e2ff", "#eff4ff"] },
+      "blog-line": { "role": "neutral", "displayName": "Blog Rule", "canonical": "#344054", "tonalRamp": ["#344054", "#45556b", "#596b81", "#708399", "#8b9daf", "#aab8c5", "#cbd4dd", "#edf2f6"] },
+      "blog-row-line": { "role": "neutral", "displayName": "Blog Row Rule", "canonical": "#273346", "tonalRamp": ["#273346", "#384b61", "#4d6178", "#667b90", "#8296a8", "#a1b1bf", "#c4ced7", "#e9eff3"] },
+      "blog-feature-line": { "role": "neutral", "displayName": "Blog Feature Rule", "canonical": "#4a5870", "tonalRamp": ["#4a5870", "#5b6b82", "#708096", "#8797a9", "#9eacba", "#b7c3ce", "#d2dbe2", "#eff3f6"] },
+      "blog-link": { "role": "primary", "displayName": "Blog Link Cobalt", "canonical": "#7fa4ff", "tonalRamp": ["#182b61", "#2e4c96", "#4f6fbd", "#7fa4ff", "#9db7ff", "#bbceff", "#d5e1ff", "#eef3ff"] },
+      "contact-soft": { "role": "neutral", "displayName": "Contact Soft", "canonical": "#eef3ff", "tonalRamp": ["#1b2a45", "#334c73", "#4f6c9d", "#718fc2", "#99b2dc", "#b9cbed", "#d5e1f8", "#eef3ff"] },
+      "dark-contact-soft": { "role": "neutral", "displayName": "Dark Contact Soft", "canonical": "#183058", "tonalRamp": ["#183058", "#29456e", "#3e5c86", "#55739b", "#718bae", "#90a7c0", "#b4c6d6", "#e2ebf2"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Manrope Display", "purpose": "Self-hosted oversized hero identity statement." },
+      "section-title": { "displayName": "Manrope Section Title", "purpose": "Large section signposts for projects and writing." },
+      "headline": { "displayName": "Manrope Headline", "purpose": "Project and evidence titles." },
+      "title": { "displayName": "Manrope Evidence Title", "purpose": "Active system-journey panel title." },
+      "body": { "displayName": "Manrope Body", "purpose": "Readable descriptions and supporting copy." },
+      "lead": { "displayName": "Manrope Lead", "purpose": "Hero explanation and conversion context." },
+      "label": { "displayName": "JetBrains Mono Label", "purpose": "Uppercase metadata, stage indices, and compact readouts." },
+      "link": { "displayName": "JetBrains Mono Evidence Link", "purpose": "Uppercase project, journey, and blog links." },
+      "nav": { "displayName": "Manrope Navigation", "purpose": "Sticky navigation and action labels." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "state-transition", "value": "180ms ease", "purpose": "Navigation, controls, border/background, and link state changes." },
+      { "name": "evidence-reveal", "value": "420ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Panel content reveal using opacity, clip-path inset, and an 8px upward settle when a journey tab changes." },
+      { "name": "media-settle", "value": "320ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Subtle project-media response on row hover." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Scroll behavior becomes auto and all transitions/animations are reduced to 0.01ms; evidence reveal is not added." }
+    ],
+    "breakpoints": [
+      { "name": "tablet-tight", "value": "1020px", "purpose": "Tighten hero, move journey links below copy, and move blog links beneath titles." },
+      { "name": "mobile", "value": "760px", "purpose": "Two-row navigation, stacked hero, 2×2 journey tabs, vertical projects, and stacked contact." },
+      { "name": "small-mobile", "value": "520px", "purpose": "20px gutters, compact action grid, stacked journey heading, 42px project rows, and block blog entries." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The direct cobalt action for Services and other primary conversion paths.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">SERVICES</a>",
+      "css": ".ds-btn-primary { display:inline-flex; min-height:46px; padding:0 20px; align-items:center; justify-content:center; border:1px solid #145cff; border-radius:12px; color:#fff; background:#145cff; font:700 13px/1 Manrope, sans-serif; text-decoration:none; transition:background-color 180ms ease, border-color 180ms ease, transform 180ms ease; } .ds-btn-primary:hover { border-color:#0049d8; background:#0049d8; transform:translateY(-1px); } .ds-btn-primary:focus-visible { outline:3px solid #0b55f5; outline-offset:4px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A bordered route to experience that keeps the primary action visually distinct.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">VIEW MY EXPERIENCE</a>",
+      "css": ".ds-btn-secondary { display:inline-flex; min-height:46px; padding:0 20px; align-items:center; justify-content:center; border:1px solid #aeb9c8; border-radius:12px; color:#111722; background:transparent; font:700 13px/1 Manrope, sans-serif; text-decoration:none; transition:background-color 180ms ease, border-color 180ms ease, color 180ms ease; } .ds-btn-secondary:hover { border-color:#145cff; color:#145cff; background:#e7eeff; } .ds-btn-secondary:focus-visible { outline:3px solid #0b55f5; outline-offset:4px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Sticky navigation with a restrained active-location underline and a square theme control.",
+      "html": "<nav class=\"ds-nav\"><strong>Fisher Lok</strong><a class=\"ds-nav-link ds-nav-link-active\" href=\"#\">Projects</a><button class=\"ds-theme\" aria-label=\"Toggle dark mode\"><svg viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"3.5\"></circle><path d=\"M12 2V5M12 19V22M2 12H5M19 12H22M4.9 4.9L7 7M17 17L19.1 19.1M19.1 4.9L17 7M7 17L4.9 19.1\"></path></svg></button></nav>",
+      "css": ".ds-nav { display:flex; min-height:72px; padding:0 24px; align-items:center; justify-content:space-between; gap:24px; border-bottom:1px solid #d4dce7; color:#111722; background:rgba(245,247,250,.9); font-family:Manrope, sans-serif; backdrop-filter:blur(16px); } .ds-nav strong { font-size:20px; font-weight:700; letter-spacing:-.025em; } .ds-nav-link { position:relative; min-height:44px; padding:0 13px; display:inline-flex; align-items:center; color:#4c586b; font-size:13px; font-weight:600; text-decoration:none; } .ds-nav-link-active { color:#111722; } .ds-nav-link-active::after { position:absolute; right:13px; bottom:7px; left:13px; height:2px; background:#145cff; content:\"\"; } .ds-theme { display:grid; width:44px; height:44px; place-items:center; border:1px solid #d4dce7; border-radius:12px; color:#111722; background:#fff; } .ds-theme svg { width:20px; height:20px; stroke:currentColor; stroke-linecap:round; stroke-width:1.8; } .ds-nav-link:focus-visible,.ds-theme:focus-visible { outline:3px solid #0b55f5; outline-offset:4px; }"
+    },
+    {
+      "name": "Project Tag",
+      "kind": "chip",
+      "refersTo": "project-tag",
+      "description": "Quiet technical metadata attached to a real project evidence row.",
+      "html": "<span class=\"ds-tag\">PYTHON</span>",
+      "css": ".ds-tag { display:inline-block; padding:4px 8px; border:1px solid #aeb9c8; border-radius:6px; color:#5f6b7e; background:transparent; font:500 10px/1.5 \"JetBrains Mono\", monospace; letter-spacing:.035em; text-transform:uppercase; }"
+    },
+    {
+      "name": "Project Evidence Row",
+      "kind": "card",
+      "refersTo": "project-media",
+      "description": "An alternating evidence row pairing a project image with factual description, tags, and links.",
+      "html": "<article class=\"ds-project\"><div class=\"ds-project-media\"></div><div><h3>Data pipeline for your quantitative trading research</h3><p>A data pipeline for quantitative trading research.</p><span class=\"ds-tag\">DATA ENGINEERING</span><a class=\"ds-evidence\" href=\"#\">GITHUB</a></div></article>",
+      "css": ".ds-project { display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); gap:18px 48px; padding:64px 0; border-top:1px solid #aeb9c8; border-bottom:1px solid #d4dce7; } .ds-project-media { min-height:280px; border-radius:14px; background:#edf1f6; } .ds-project h3 { margin:0 0 18px; color:#111722; font:600 clamp(30px,3.3vw,48px)/1.08 Manrope,sans-serif; letter-spacing:-.032em; } .ds-project p { color:#4c586b; font:400 16px/1.65 Manrope,sans-serif; } .ds-tag { display:inline-block; margin-top:18px; padding:4px 8px; border:1px solid #aeb9c8; border-radius:6px; color:#5f6b7e; font:500 10px/1.5 \"JetBrains Mono\",monospace; letter-spacing:.035em; } .ds-evidence { display:block; margin-top:24px; color:#145cff; font:600 11px/1.5 \"JetBrains Mono\",monospace; letter-spacing:.035em; text-transform:uppercase; } .ds-evidence::after { display:inline-block; width:7px; height:7px; margin-left:8px; border-top:1px solid currentColor; border-right:1px solid currentColor; content:\"\"; transform:rotate(45deg) translateY(-1px); }"
+    },
+    {
+      "name": "System Journey",
+      "kind": "custom",
+      "refersTo": "evidence-panel",
+      "description": "The four-stage Research, Data, Execution, Monitoring control that exposes real project evidence.",
+      "html": "<section class=\"ds-journey\"><div class=\"ds-tabs\"><button class=\"ds-tab ds-tab-active\">01 Research</button><button class=\"ds-tab\">02 Data</button><button class=\"ds-tab\">03 Execution</button><button class=\"ds-tab\">04 Monitoring</button></div><div class=\"ds-panel\"><small>01 / 04</small><div><h2>Using reinforcement learning algorithms to solve Atari games</h2><p>Implementation of deep reinforcement learning algorithms for solving OpenAI's gym environments.</p></div><a href=\"#\">GITHUB</a></div></section>",
+      "css": ".ds-journey { border-top:1px solid #aeb9c8; border-bottom:1px solid #aeb9c8; background:#fff; } .ds-tabs { display:grid; grid-template-columns:repeat(4,1fr); } .ds-tab { min-height:88px; padding:17px 18px; border:0; border-right:1px solid #d4dce7; border-bottom:1px solid #d4dce7; color:#4c586b; background:#fff; text-align:left; font:700 16px/1.2 Manrope,sans-serif; } .ds-tab-active { color:#fff; background:#145cff; } .ds-panel { display:grid; grid-template-columns:92px minmax(0,1fr) auto; min-height:245px; padding:40px; gap:40px; align-items:start; } .ds-panel small { color:#145cff; font:500 11px/1.6 \"JetBrains Mono\",monospace; } .ds-panel h2 { max-width:24ch; margin:0 0 18px; color:#111722; font:600 36px/1.08 Manrope,sans-serif; letter-spacing:-.028em; } .ds-panel p { max-width:64ch; margin:0; color:#4c586b; font:400 16px/1.62 Manrope,sans-serif; } .ds-panel a { color:#145cff; font:600 11px/1.5 \"JetBrains Mono\",monospace; letter-spacing:.035em; text-transform:uppercase; }"
+    },
+    {
+      "name": "Blog List",
+      "kind": "custom",
+      "refersTo": "blog-list",
+      "description": "A dark structured reading list with one featured post and compact subsequent entries.",
+      "html": "<article class=\"ds-blog\"><small>AUGUST 25, 2026 · 12 MIN READ</small><h3>Why the World Can Look Simple From Far Away</h3><p>A beginner-friendly journey through scaling laws, universality, and why neat patterns do not predict every detail.</p><a href=\"#\">READ MORE</a></article>",
+      "css": ".ds-blog { padding:48px 0; border-top:1px solid #4a5870; border-bottom:1px solid #273346; color:#f4f7fb; background:#0a101b; } .ds-blog small { color:#b2bfd0; font:500 10px/1.6 \"JetBrains Mono\",monospace; letter-spacing:.035em; text-transform:uppercase; } .ds-blog h3 { max-width:18ch; margin:20px 0 24px; font:600 clamp(44px,5.7vw,76px)/1 Manrope,sans-serif; letter-spacing:-.026em; } .ds-blog p { max-width:60ch; color:#b2bfd0; font:400 17px/1.65 Manrope,sans-serif; } .ds-blog a { color:#7fa4ff; font:600 11px/1.5 \"JetBrains Mono\",monospace; letter-spacing:.035em; text-transform:uppercase; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Precision Calibration Console",
+    "overview": "The interface treats engineering evidence as a calibrated signal path. Cool-white and midnight surfaces, graphite type, cobalt state color, instrument-grade lines, and compact mono readouts make the progression from research to reliable trading systems legible without pretending to be a trading terminal. The visual world is quiet at rest and exact in state: hierarchy comes from scale, alignment, contrast, and evidence, not ornament.\n\nThe portfolio opens with a large identity statement and direct conversion actions, then gives the visitor a four-stage Research → Data → Execution → Monitoring control. Projects are evidence rows with real imagery, descriptions, tags, and links; the blog is a dark, structured reading list; contact resolves into a high-contrast cobalt field. Light and dark modes share the same geometry and state logic.",
+    "keyCharacteristics": ["Calibrated signal-path storytelling from research to monitoring.", "Cool-white and midnight tonal surfaces with cobalt reserved for state and action.", "Manrope for human-readable hierarchy; JetBrains Mono for instrument labels and evidence links.", "Hairlines, tonal layers, and alignment create depth without shadows.", "Real project, résumé, service, blog, and email destinations remain the source of truth."],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Cobalt is a state and action signal, not decoration. Keep it concentrated on actions, active tabs, progress, links, and focus.", "section": "colors" },
+      { "name": "The Evidence Rule", "body": "Every visual claim should resolve to existing project, service, résumé, blog, or contact evidence; do not add unsupported outcomes or performance claims.", "section": "colors" },
+      { "name": "The Two-Register Rule", "body": "Use Manrope for hierarchy and explanation; use JetBrains Mono only where a compact readout or evidence affordance helps scanning.", "section": "typography" },
+      { "name": "The Compressed Display Rule", "body": "Large headings carry negative tracking only at the established display/headline sizes; body text remains open and readable.", "section": "typography" },
+      { "name": "The Flat-by-Default Rule", "body": "Surfaces are flat at rest; hierarchy is earned through tone, border, spacing, and alignment.", "section": "elevation" },
+      { "name": "The Line Before Lift Rule", "body": "When a boundary or state needs emphasis, strengthen the hairline or apply the cobalt state before considering any additional material effect.", "section": "elevation" }
+    ],
+    "dos": ["Do lead with Fisher Lok’s existing identity, services, experience, projects, writing, and email destination.", "Do use the calibrated signal path to explain the research-to-deployment range.", "Do keep Manrope and JetBrains Mono in their established display/body versus instrument-label roles.", "Do use cobalt for action, active state, links, progress, and focus; keep its area intentionally limited.", "Do preserve line-led, no-shadow tonal depth and the 1020px, 760px, and 520px responsive behavior.", "Do honor keyboard focus, semantic tab behavior, and prefers-reduced-motion: reduce."],
+    "donts": ["Don't introduce bookstore/editorial warmth, parchment, brick-red, or gold.", "Don't imitate Apple or reuse Apple-like product-gallery language.", "Don't turn the site into generic SaaS cards, a fake terminal, or a dashboard.", "Don't add cyberpunk glow, gradients, decorative shadows, or ornamental glass effects.", "Don't fabricate clients, testimonials, trading returns, performance figures, deployments, or commercial outcomes.", "Don't replace evidence rows or the blog list with empty marketing claims."]
+  }
+}
