@@ -44,7 +44,7 @@ Visitors evaluate Fisher by reviewing featured projects, trading-infrastructure 
 
 ## Evidence on Hand
 
-- Homepage project descriptions and links in `index.html` and `demo.html`.
+- Homepage project descriptions and links in `index.html`.
 - Trading infrastructure consulting details in `services/trading-infrastructure-engineering.html`.
 - Professional experience and skills in `resume/index.html`.
 - Long-form writing in `blog/` covering AI, technology, mathematics, markets, music, and personal trading experience.

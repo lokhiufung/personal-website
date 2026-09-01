@@ -6,22 +6,33 @@
     <meta name="description"
         content="Resume of Fisher Lok, a quantitative developer and trading systems engineer based in Hong Kong.">
     <title>Resume — Fisher Lok</title>
-    <link rel="stylesheet" href="../assets/css/styles.css?v=3">
-    <link rel="stylesheet" href="../assets/css/resume.css?v=1">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="../assets/css/site.css?v=3">
+    <link rel="stylesheet" href="../assets/css/resume.css?v=2">
 </head>
-<body class="resume-page">
+<body class="precision-console resume-page">
     <div class="scroll-progress" id="scrollProgress"></div>
     <nav>
         <div class="nav-container">
             <a class="logo resume-logo" href="../index.html">Fisher Lok</a>
             <ul class="nav-links">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link active" aria-current="page">Experience</a></li>
                 <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
                 <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
-                <li><button class="print-resume" type="button" onclick="window.print()">Print / PDF</button></li>
+                <li class="mobile-optional-nav"><a href="../index.html#contact" class="nav-link">Contact</a></li>
                 <li>
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                        <span class="theme-toggle-slider">☀️</span>
+                        <span class="theme-toggle-slider" aria-hidden="true">
+                            <svg class="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g class="theme-icon-sun">
+                                    <circle cx="12" cy="12" r="3.5"></circle>
+                                    <path d="M12 2V5M12 19V22M2 12H5M19 12H22M4.9 4.9L7 7M17 17L19.1 19.1M19.1 4.9L17 7M7 17L4.9 19.1"></path>
+                                </g>
+                                <path class="theme-icon-moon" d="M19 15.4A7.5 7.5 0 0 1 8.6 5a7.5 7.5 0 1 0 10.4 10.4Z"></path>
+                            </svg>
+                        </span>
+                        <span class="visually-hidden" aria-hidden="true">☀️</span>
                     </button>
                 </li>
             </ul>
@@ -32,11 +43,17 @@
         <header class="resume-hero">
             <div>
                 <h1>Fisher Lok</h1>
-                <p class="resume-role">Quantitative Developer · Trading Systems Engineer</p>
+                <p class="resume-role">Quantitative Developer · AI Engineer</p>
             </div>
-            <p class="resume-summary">I work across quantitative research, AI product development, and live trading
-                infrastructure—turning ideas into testable systems, then making the path from research to deployment
-                repeatable.</p>
+            <div class="resume-introduction">
+                <p class="resume-summary">I work across quantitative research, AI product development, and live trading
+                    infrastructure—turning ideas into testable systems, then making the path from research to deployment
+                    repeatable.</p>
+                <div class="resume-hero-actions">
+                    <a class="resume-contact-button" href="mailto:lokhiufung123@gmail.com">Discuss an infrastructure project</a>
+                    <button class="resume-print-button" type="button" onclick="window.print()">Print / PDF</button>
+                </div>
+            </div>
         </header>
 
         <div class="resume-layout">
@@ -58,7 +75,6 @@
                         <li>IBKR execution infrastructure</li>
                         <li>Live algorithmic trading</li>
                         <li>Backtesting &amp; data pipelines</li>
-                        <li>Monitoring &amp; recovery</li>
                         <li>AI / LLM research workflows</li>
                     </ul>
                 </section>
@@ -80,7 +96,7 @@
                         <span>01 / CAREER</span>
                     </div>
 
-                    <article class="resume-entry">
+                    <article class="resume-entry resume-entry-current">
                         <div class="resume-entry-heading">
                             <h3>Independent Quantitative Developer</h3>
                             <span>Jun 2025–Present</span>
@@ -126,9 +142,11 @@
                         </div>
                         <p class="resume-company">Applied deep-learning product R&amp;D.</p>
                         <ul>
-                            <li>Built customized client chatbots and researched speech recognition and text-to-speech systems.</li>
-                            <li>Worked across data sourcing, model training, fine-tuning, deployment, and API serving.</li>
+                            <li>Researched and customized deep-learning models, including Tacotron-2 and Jasper, for Cantonese speech recognition and text-to-speech, adapting emerging AI techniques to a language with relatively limited training resources.</li>
+                            <li>Delivered client-facing AI applications using FastAPI, including customized chatbots and speech-based systems.</li>
+                            <li>Worked across the full model lifecycle — data sourcing, training, fine-tuning, deployment, and API serving — turning experimental models into usable products.</li>
                         </ul>
+                        <div class="resume-tags"><span>Python</span><span>AI</span><span>Neural network</span><span>Speech recognition</span><span>Text to speech</span><span>Fine-tune deep learning model</span><span>Research</span></div>
                     </article>
 
                     <article class="resume-entry">
@@ -138,30 +156,26 @@
                         </div>
                         <p class="resume-company">HKUST Instructional Assistant · HKT Data Analyst · Cryptocurrency Algorithmic Trader</p>
                         <ul>
-                            <li>Taught business statistics at HKUST, worked in data analysis at HKT, and built software for cross-exchange arbitrage.</li>
+                            <li>Taught business statistics at HKUST, worked in data analysis at HKT, and built software for cross-exchange arbitrage on Deribit and Bitmex.</li>
                             <li>Started with Python for quantitative analysis and grew into software design, concurrency, and production-minded trading systems.</li>
                         </ul>
+                        <div class="resume-tags"><span>Cryptocurrency</span><span>Algorithmic trading</span><span>Statistics</span><span>Data analysis</span></div>
                     </article>
                 </section>
 
-                <section class="resume-section" aria-labelledby="practice-title">
-                    <div class="resume-section-heading">
-                        <h2 id="practice-title">How I work</h2>
-                        <span>02 / PRACTICE</span>
-                    </div>
-                    <div class="resume-principles">
-                        <article><h3>Reliability is operational.</h3><p>Recovery, reconciliation, logs, and procedures matter as much as the first successful order.</p></article>
-                        <article><h3>Clarity earns trust.</h3><p>Explain the system, its failure modes, responsibilities, and next action in plain language.</p></article>
-                    </div>
-                </section>
             </div>
         </div>
-
-        <footer class="resume-footer">
-            <strong>Good systems make the next decision easier.</strong>
-            <span>Available for focused conversations about trading infrastructure and execution reliability.</span>
-        </footer>
     </main>
-    <script src="../assets/js/main.js?v=2" defer></script>
+
+    <footer class="resume-footer">
+        <div class="resume-footer-content">
+            <strong>Good systems make the next decision easier.</strong>
+            <div class="resume-footer-action">
+                <p>Available for focused conversations about trading infrastructure and execution reliability.</p>
+                <a href="mailto:lokhiufung123@gmail.com">Discuss an infrastructure project</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/site.js?v=2" defer></script>
 </body>
 </html>

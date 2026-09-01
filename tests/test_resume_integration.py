@@ -36,6 +36,17 @@ def parse(path):
 
 
 class ResumeIntegrationContract(unittest.TestCase):
+    def test_live_site_has_no_demo_surface_or_asset_dependency(self):
+        self.assertFalse((ROOT / "demo.html").exists())
+        self.assertFalse((ROOT / "assets" / "css" / "demo.css").exists())
+        self.assertFalse((ROOT / "assets" / "js" / "demo.js").exists())
+
+        for page in (HOME, RESUME):
+            self.assertNotIn("demo.", page.read_text(encoding="utf-8"))
+
+        roadmap = (ROOT / "roadmap-variants.html").read_text(encoding="utf-8")
+        self.assertNotIn('href="demo.html"', roadmap)
+
     def test_homepage_keeps_experience_on_separate_resume_page(self):
         source, parser = parse(HOME)
         self.assertNotIn("experience", parser.ids)
@@ -79,11 +90,14 @@ class ResumeIntegrationContract(unittest.TestCase):
     def test_resume_is_standalone_and_site_native(self):
         source, parser = parse(RESUME)
         self.assertEqual(parser.lang, "en")
-        self.assertIn("../assets/css/styles.css?v=3", parser.stylesheets)
-        self.assertIn("../assets/css/resume.css?v=1", parser.stylesheets)
+        self.assertIn("../assets/css/site.css?v=3", parser.stylesheets)
+        self.assertIn("../assets/css/resume.css?v=2", parser.stylesheets)
+        self.assertIn('class="precision-console resume-page"', source)
         self.assertIn("Print / PDF", source)
         self.assertIn("mailto:lokhiufung123@gmail.com", source)
         self.assertIn("@media print", (ROOT / "assets/css/resume.css").read_text(encoding="utf-8"))
+        self.assertIn("Quantitative Developer · AI Engineer", source)
+        self.assertNotIn("resume-signal-path", source)
 
     def test_resume_uses_verified_career_details(self):
         source, _ = parse(RESUME)

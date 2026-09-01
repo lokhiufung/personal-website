@@ -7,6 +7,7 @@
     <meta name="description"
         content="Fisher Lok is a quantitative developer and trading systems engineer working across AI, research infrastructure, and live algorithmic trading.">
     <title>Fisher Lok — Quantitative Developer & Trading Systems Engineer</title>
+    <link rel="icon" href="data:,">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TTTL9SQWM3"></script>
@@ -17,10 +18,18 @@
         gtag('config', 'G-TTTL9SQWM3');
     </script>
 
-    <link rel="stylesheet" href="assets/css/styles.css?v=3">
+    <link rel="stylesheet" href="assets/css/site.css?v=3">
 </head>
 
-<body>
+<body class="precision-console">
+    <!--
+    THESIS: Engineering evidence behaves like a calibrated signal path, not a decorative tech dashboard.
+    OWN-WORLD: Cool-white and midnight surfaces, graphite type, cobalt state color, instrument-grade lines, and compact mono readouts.
+    STORY: A trading firm sees Fisher's range, tests each system stage against real work, then reaches services, experience, writing, and contact.
+    FIRST VIEWPORT: A large identity statement and conversion actions lead into a full-width four-stage control with one inline evidence panel.
+    FORM: Precision calibration console, third grounded direction, seed 4f3e9248.
+    FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+    -->
     <div class="scroll-progress" id="scrollProgress"></div>
     <nav>
         <div class="nav-container">
@@ -33,7 +42,16 @@
                 <li class="mobile-optional-nav"><a href="#contact" class="nav-link">Contact</a></li>
                 <li>
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                        <div class="theme-toggle-slider">☀️</div>
+                        <span class="theme-toggle-slider" aria-hidden="true">
+                            <svg class="theme-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g class="theme-icon-sun">
+                                    <circle cx="12" cy="12" r="3.5"></circle>
+                                    <path d="M12 2V5M12 19V22M2 12H5M19 12H22M4.9 4.9L7 7M17 17L19.1 19.1M19.1 4.9L17 7M7 17L4.9 19.1"></path>
+                                </g>
+                                <path class="theme-icon-moon" d="M19 15.4A7.5 7.5 0 0 1 8.6 5a7.5 7.5 0 1 0 10.4 10.4Z"></path>
+                            </svg>
+                        </span>
+                        <span class="visually-hidden" aria-hidden="true">☀️</span>
                     </button>
                 </li>
             </ul>
@@ -41,15 +59,122 @@
     </nav>
     <main>
         <section id="home" class="hero section">
-            <div class="container">
-                <p class="hero-kicker">Quantitative Developer · Trading Systems Engineer</p>
-                <h1>Hello, I'm Fisher Lok</h1>
-                <p>I work across quantitative research, AI product development, and live trading infrastructure—turning
-                    ideas into testable systems, then making the path from research to deployment repeatable.</p>
-                <div class="hero-actions">
-                    <a href="resume/index.html" class="cta-button" data-destination="resume">View My Experience</a>
-                    <a href="resume/index.html" class="cta-button cta-button-secondary">Full Resume</a>
+            <div class="container hero-layout">
+                <div class="hero-copy">
+                    <h1>Closing the loop<br>with agents.</h1>
+                    <div class="hero-intro">
+                        <p>I’m Fisher Lok. I build software for algorithmic and quantitative trading. Now, I’m building
+                            an agentic quantitative research system with my partners.</p>
+                        <div class="hero-actions">
+                            <button type="button" class="cta-button" data-scroll-target="#capabilities">What I do</button>
+                            <button type="button" class="cta-button cta-button-secondary" data-scroll-target="#projects">See my work</button>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </section>
+        <section id="capabilities" class="capabilities section">
+            <div class="container">
+                <div class="capabilities-heading">
+                    <h2>What I do.</h2>
+                    <p>Three focused ways I turn quantitative ideas into dependable, fast-moving systems.</p>
+                </div>
+                <div class="capability-carousel" data-capability-carousel role="region" aria-label="Capabilities" aria-roledescription="carousel" tabindex="0">
+                    <div class="capability-track">
+                        <article class="capability-slide" data-capability-slide data-slide-index="0" aria-roledescription="slide" aria-label="1 of 3">
+                            <div class="capability-slide-copy">
+                                <p class="capability-label">Capability / 01</p>
+                                <h3>Delivering Reliable Trading Infrastructure</h3>
+                                <p>I’ve built trading systems for users ranging from individual traders to cryptocurrency exchanges, covering research, execution, deployment, and monitoring.</p>
+                            </div>
+                            <a href="services/trading-infrastructure-engineering.html" class="capability-link">Explore infrastructure work</a>
+                            <span class="capability-stage-number" aria-hidden="true">01</span>
+                        </article>
+                        <article class="capability-slide" data-capability-slide data-slide-index="1" aria-roledescription="slide" aria-label="2 of 3">
+                            <div class="capability-slide-copy">
+                                <p class="capability-label">Capability / 02</p>
+                                <h3>Agentic Quantitative Research</h3>
+                                <p>I’m building research harnesses that enable AI agents to autonomously generate, test, and iterate on quantitative trading ideas.</p>
+                            </div>
+                            <a href="resume/index.html" class="capability-link" data-destination="resume">See my experience</a>
+                            <span class="capability-stage-number" aria-hidden="true">02</span>
+                        </article>
+                        <article class="capability-slide" data-capability-slide data-slide-index="2" aria-roledescription="slide" aria-label="3 of 3">
+                            <div class="capability-slide-copy">
+                                <p class="capability-label">Capability / 03</p>
+                                <h3>Shipping at Lightning Speed</h3>
+                                <p>Using agentic development workflows, I can move quickly from idea to production — including building and deploying a trading engine in just two weeks.</p>
+                            </div>
+                            <a href="resume/index.html" class="capability-link">View projects &amp; experience</a>
+                            <span class="capability-stage-number" aria-hidden="true">03</span>
+                        </article>
+                    </div>
+                    <div class="capability-carousel-footer">
+                        <div class="capability-pagination" aria-label="Capability slide selection">
+                            <button type="button" class="capability-page is-active" data-slide-target="0" aria-label="Show reliable trading infrastructure" aria-current="true"></button>
+                            <button type="button" class="capability-page" data-slide-target="1" aria-label="Show agentic quantitative research"></button>
+                            <button type="button" class="capability-page" data-slide-target="2" aria-label="Show shipping at lightning speed"></button>
+                        </div>
+                        <p>Swipe / scroll / use arrows</p>
+                        <div class="capability-controls">
+                            <button type="button" data-capability-direction="previous" aria-label="Previous capability">←</button>
+                            <button type="button" data-capability-direction="next" aria-label="Next capability">→</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="system" class="journey-section section">
+            <div class="container">
+                <div class="journey-introduction">
+                    <h2>From first principles to agentic systems.</h2>
+                    <p>A personal and professional journey through mathematics, markets, AI, and the systems that connect them.</p>
+                </div>
+                <div class="journey-role">Quantitative Developer · AI Engineer</div>
+                <ol class="journey-editorial" aria-label="Personal and professional journey">
+                    <li class="journey-chapter">
+                        <div class="journey-marker" aria-hidden="true"><span>01</span><i></i></div>
+                        <article class="journey-chapter-copy">
+                            <h3>Foundation in science and mathematics</h3>
+                            <p>I started with a background in mathematics and statistics, with little knowledge of programming or AI. That foundation taught me to think in models, probabilities, and first principles—long before I could turn those ideas into software.</p>
+                            <div class="journey-links">
+                                <a href="resume/index.html" data-destination="resume">Mathematics and Statistics in University</a>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="journey-chapter">
+                        <div class="journey-marker" aria-hidden="true"><span>02</span><i></i></div>
+                        <article class="journey-chapter-copy">
+                            <h3>Building with trading software and AI</h3>
+                            <p>I built my first cross-exchange arbitrage bot and later worked on neural network experiments for text-to-speech and speech recognition. This was where abstract theory became something I could build, test, and improve in code.</p>
+                            <div class="journey-links">
+                                <a href="blog/lessons-from-my-first-trading-journey.html">My first trading journey</a>
+                                <a href="https://github.com/lokhiufung/DRL-implementations/tree/master" target="_blank" rel="noopener noreferrer">Deep RL implementations</a>
+                                <a href="https://github.com/lokhiufung/alchemist" target="_blank" rel="noopener noreferrer">Alchemist trading engine</a>
+                                <a href="https://medium.com/data-driven-fiction/human-and-machine-work-together-two-important-intelligent-applications-9e22a1f651a" target="_blank" rel="noopener noreferrer">Human + machine work together</a>
+                                <a href="https://github.com/lokhiufung/trading-data" target="_blank" rel="noopener noreferrer">Trading data pipeline</a>
+                                <a href="https://medium.com/insiderfinance/can-ai-reshape-the-quantitative-trading-business-ef96dc83b26a" target="_blank" rel="noopener noreferrer">Can AI reshape quantitative trading?</a>
+                            </div>
+                        </article>
+                    </li>
+                    <li class="journey-chapter">
+                        <div class="journey-marker" aria-hidden="true"><span>03</span><i></i></div>
+                        <article class="journey-chapter-copy">
+                            <h3>LLM-enabled research and engineering</h3>
+                            <p>While working on trading infrastructure for a crypto exchange, ChatGPT changed how I thought about software and AI. I began to see LLMs not just as models, but as tools capable of reasoning, coding, and executing complex workflows.</p>
+                        </article>
+                    </li>
+                    <li class="journey-chapter">
+                        <div class="journey-marker" aria-hidden="true"><span>04</span><i></i></div>
+                        <article class="journey-chapter-copy">
+                            <h3>Closing the loop with agents</h3>
+                            <p>Today, I’m exploring agentic development and quantitative research workflows—building systems where agents can generate, test, evaluate, and iterate on ideas. The goal is to make the path from research to live trading more repeatable.</p>
+                            <div class="journey-links">
+                                <a href="https://fisherlok.medium.com/funsearch-how-deepmind-uses-llm-to-solve-a-mathematic-problem-that-has-never-been-solved-17a9f705f771" target="_blank" rel="noopener noreferrer">FunSearch: LLMs solve a mathematics problem</a>
+                            </div>
+                        </article>
+                    </li>
+                </ol>
             </div>
         </section>
         <section id="projects" class="section">
@@ -58,8 +183,7 @@
                 <div class="projects-grid">
                     <div class="card project-card">
                         <img src="assets/images/project-alchemist.png" alt="Alchemist Trading System"
-                            class="project-image"
-                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                            class="project-image">
                         <h3 class="project-title">Alchemist - A Ray-based High-Performance Automated Trading System</h3>
                         <p class="project-description">Alchemist is a high-performance, distributed automated trading
                             system designed to seamlessly transition quantitative research into fully automated
@@ -71,15 +195,14 @@
                         </div>
                         <div class="project-links">
                             <a href="https://boulder-submarine-0ae.notion.site/Alchemist-A-Ray-based-High-Performance-Automated-Trading-System-1ace87b87fa4803cb9ade11517148d65"
-                                target="_blank" class="project-link">Documentation</a>
-                            <a href="https://github.com/lokhiufung/alchemist" target="_blank"
+                                target="_blank" rel="noopener noreferrer" class="project-link">Documentation</a>
+                            <a href="https://github.com/lokhiufung/alchemist" target="_blank" rel="noopener noreferrer"
                                 class="project-link">GitHub</a>
                         </div>
                     </div>
                     <div class="card project-card">
                         <img src="assets/images/project-trading-data.jpg" alt="Trading Data Pipeline"
-                            class="project-image"
-                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                            class="project-image">
                         <h3 class="project-title">Data pipeline for your quantitative trading research</h3>
                         <p class="project-description">A data pipeline for quantitative trading research. It includes
                             data collection, data cleaning and data storage.</p>
@@ -89,15 +212,13 @@
                             <span class="tag">Trading</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/lokhiufung/trading-data" target="_blank"
+                            <a href="https://github.com/lokhiufung/trading-data" target="_blank" rel="noopener noreferrer"
                                 class="project-link">GitHub</a>
-                            <a href="services/trading-infrastructure-engineering.html" class="project-link">Services</a>
                         </div>
                     </div>
                     <div class="card project-card">
                         <img src="assets/images/project-webscraping-buddy.gif" alt="Web Scraping Buddy"
-                            class="project-image"
-                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                            class="project-image">
                         <h3 class="project-title">Web scraping buddy</h3>
                         <p class="project-description">Web scrapers for instagram, XHS and investor contacts. Get a list
                             of potential influencers and investors for FREE.</p>
@@ -107,14 +228,13 @@
                             <span class="tag">Automation</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/lokhiufung/webscraping-buddy" target="_blank"
+                            <a href="https://github.com/lokhiufung/webscraping-buddy" target="_blank" rel="noopener noreferrer"
                                 class="project-link">GitHub</a>
                         </div>
                     </div>
 
                     <div class="card project-card">
-                        <img src="assets/images/project-rl.gif" alt="Reinforcement Learning" class="project-image"
-                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                        <img src="assets/images/project-rl.gif" alt="Reinforcement Learning" class="project-image">
                         <h3 class="project-title">Using reinforcement learning algorithms to solve Atari games</h3>
                         <p class="project-description">Implementation of deep reinforcement learning algorithms for
                             solving OpenAI's gym environments.</p>
@@ -124,13 +244,12 @@
                             <span class="tag">Deep Learning</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/lokhiufung/DRL-implementations/tree/master" target="_blank"
+                            <a href="https://github.com/lokhiufung/DRL-implementations/tree/master" target="_blank" rel="noopener noreferrer"
                                 class="project-link">GitHub</a>
                         </div>
                     </div>
                     <div class="card project-card">
-                        <img src="assets/images/project-gomoku.gif" alt="Gomoku Game" class="project-image"
-                            style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                        <img src="assets/images/project-gomoku.gif" alt="Gomoku Game" class="project-image">
                         <h3 class="project-title">Playing Gomoku in terminal!</h3>
                         <p class="project-description">A fun project: Write a gomoku game from scratch!</p>
                         <div class="project-tags">
@@ -139,7 +258,7 @@
                             <span class="tag">CLI</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/lokhiufung/gomoku" target="_blank"
+                            <a href="https://github.com/lokhiufung/gomoku" target="_blank" rel="noopener noreferrer"
                                 class="project-link">GitHub</a>
                         </div>
                     </div>
@@ -152,8 +271,7 @@
                 <div class="blog-posts">
                     <article class="blog-post">
                         <div class="blog-meta">August 25, 2026 • 12 min read</div>
-                        <h3 class="blog-title"
-                            onclick="window.location.href='blog/why-the-world-can-look-simple-from-far-away.html'">Why
+                        <h3 class="blog-title">Why
                             the World Can Look Simple From Far Away</h3>
                         <p class="blog-excerpt">A beginner-friendly journey through scaling laws, universality, and
                             why neat patterns in biology, markets, AI, and prime numbers do not predict every detail.</p>
@@ -161,7 +279,7 @@
                     </article>
                     <article class="blog-post">
                         <div class="blog-meta">November 21, 2025 • 10 min read</div>
-                        <h3 class="blog-title" onclick="window.location.href='blog/chopin-revolutionary.html'">The Sound
+                        <h3 class="blog-title">The Sound
                             of Fury</h3>
                         <p class="blog-excerpt">Deconstructing the technique and emotion behind Chopin's "Revolutionary"
                             Etude with interactive sheet music.</p>
@@ -169,7 +287,7 @@
                     </article>
                     <article class="blog-post">
                         <div class="blog-meta">November 20, 2025 • 8 min read</div>
-                        <h3 class="blog-title" onclick="window.location.href='blog/furstenbergs-proof.html'">Infinity in
+                        <h3 class="blog-title">Infinity in
                             a Finite Space</h3>
                         <p class="blog-excerpt">An interactive exploration of Furstenberg's beautiful topological proof
                             of the infinitude of primes.</p>
@@ -177,7 +295,7 @@
                     </article>
                     <article class="blog-post">
                         <div class="blog-meta">November 19, 2025 • 5 min read</div>
-                        <h3 class="blog-title" onclick="window.location.href='blog/fermats-little-theorem.html'">
+                        <h3 class="blog-title">
                             Fermat's Little Theorem</h3>
                         <p class="blog-excerpt">Explore the elegance of number theory and its critical role in modern
                             cryptography through Fermat's Little Theorem.</p>
@@ -185,8 +303,7 @@
                     </article>
                     <article class="blog-post">
                         <div class="blog-meta">December 16, 2023 • 10 min read</div>
-                        <h3 class="blog-title"
-                            onclick="window.location.href='blog/lessons-from-my-first-trading-journey.html'">
+                        <h3 class="blog-title">
                             Lessons from my first trading journey in 2018 — Can arbitrage make me rich?</h3>
                         <p class="blog-excerpt">In 2018, I started a journey into the world of cryptocurrency trading
                             and software development with minimal experience. Alongside a knowledgeable friend, I
@@ -195,50 +312,46 @@
                     </article>
                     <article class="blog-post">
                         <div class="blog-meta">February 1, 2022 • 5 min read</div>
-                        <h3 class="blog-title"
-                            onclick="window.open('https://medium.com/data-driven-fiction/human-and-machine-work-together-two-important-intelligent-applications-9e22a1f651a', '_blank')">
+                        <h3 class="blog-title">
                             Human and machine work together: Two important intelligent applications</h3>
                         <p class="blog-excerpt">What could be the most important field of research in artificial
                             intelligence? Natural language understanding may be the one. Advances in natural language
                             understanding can potentially boost up the productivity and knowledge acquisition for
                             humans.</p>
                         <a href="https://medium.com/data-driven-fiction/human-and-machine-work-together-two-important-intelligent-applications-9e22a1f651a"
-                            target="_blank" class="read-more">Read on Medium</a>
+                            target="_blank" rel="noopener noreferrer" class="read-more">Read on Medium</a>
                     </article>
                     <article class="blog-post">
                         <div class="blog-meta">January 26, 2020 • 5 min read</div>
-                        <h3 class="blog-title"
-                            onclick="window.open('https://medium.com/analytics-vidhya/what-learning-systems-do-intelligent-agents-need-reviews-from-deepmind-8ec901de9d70', '_blank')">
+                        <h3 class="blog-title">
                             What Learning Systems do Intelligent Agents Need? Reviews from DeepMind 2</h3>
                         <p class="blog-excerpt">We know that there are 2 learning systems. But why do we need 2 separate
                             learning systems? In this article, we will explain the role of the hippocampus to the slow
                             integration of new experiences through replay.</p>
                         <a href="https://medium.com/analytics-vidhya/what-learning-systems-do-intelligent-agents-need-reviews-from-deepmind-8ec901de9d70"
-                            target="_blank" class="read-more">Read on Medium</a>
+                            target="_blank" rel="noopener noreferrer" class="read-more">Read on Medium</a>
                     </article>
                     <article class="blog-post">
                         <div class="blog-meta">December 30, 2019 • 5 min read</div>
-                        <h3 class="blog-title"
-                            onclick="window.open('https://medium.com/analytics-vidhya/what-learning-systems-do-intelligent-agents-need-reviews-from-deepmind-81c486050660', '_blank')">
+                        <h3 class="blog-title">
                             What Learning Systems do Intelligent Agents Need? Reviews from DeepMind 1</h3>
                         <p class="blog-excerpt">Memory is the data or information retrieved when an intelligent agent
                             needs it. The ability to retrieve and store memory is one of the features of intelligent
                             agents. With the theory of Complementary Learning Systems (CLS), an intelligent agent
                             implements 2 learning systems.</p>
                         <a href="https://medium.com/analytics-vidhya/what-learning-systems-do-intelligent-agents-need-reviews-from-deepmind-81c486050660"
-                            target="_blank" class="read-more">Read on Medium</a>
+                            target="_blank" rel="noopener noreferrer" class="read-more">Read on Medium</a>
                     </article>
                     <article class="blog-post">
                         <div class="blog-meta">November 19, 2019 • 5 min read</div>
-                        <h3 class="blog-title"
-                            onclick="window.open('https://medium.com/@fisherlok/understand-artificial-neural-networks-with-biological-analogy-18a4d76081eb', '_blank')">
+                        <h3 class="blog-title">
                             Understand artificial neural networks with biological analogy</h3>
                         <p class="blog-excerpt">Artificial neural network (deep learning may be a fancier name!) is
                             probably the most popular machine learning model now. You can always hear the words "deep
                             learning" from everywhere. This is a biologically inspired model and it is good to
                             understand this model with some biology!</p>
                         <a href="https://medium.com/@fisherlok/understand-artificial-neural-networks-with-biological-analogy-18a4d76081eb"
-                            target="_blank" class="read-more">Read on Medium</a>
+                            target="_blank" rel="noopener noreferrer" class="read-more">Read on Medium</a>
                     </article>
                 </div>
                 <!-- Comments Section - Commented out for later use
@@ -280,10 +393,9 @@
         <section id="contact" class="section">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
-                <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
-                    <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">Feel free to reach out to me via email:</p>
-                    <a href="mailto:lokhiufung123@gmail.com"
-                        style="font-size: 1.3rem; color: var(--primary); text-decoration: none; font-weight: 600;">
+                <div class="card">
+                    <p>Feel free to reach out to me via email:</p>
+                    <a href="mailto:lokhiufung123@gmail.com">
                         lokhiufung123@gmail.com
                     </a>
                 </div>
@@ -319,7 +431,7 @@
             <p>&copy; 2026 Fisher Lok. Built around curiosity, systems, and useful work.</p>
         </div>
     </footer>
-    <script src="assets/js/main.js?v=2" defer></script>
+    <script src="assets/js/site.js?v=2" defer></script>
 </body>
 
 </html>

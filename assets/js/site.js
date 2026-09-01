@@ -1,3 +1,4 @@
+// Shared interaction behavior for the live site.
 (function (root, factory) {
     const api = factory();
 
@@ -43,18 +44,11 @@
         return active >= 0 ? sectionEntries[active].href : null;
     }
 
-    function getNextTabIndex(currentIndex, key, count) {
+    function getNextSlideIndex(currentIndex, direction, count) {
         if (count <= 0) return -1;
-        if (key === "Home") return 0;
-        if (key === "End") return count - 1;
-        if (key === "ArrowRight" || key === "ArrowDown") return (currentIndex + 1) % count;
-        if (key === "ArrowLeft" || key === "ArrowUp") return (currentIndex - 1 + count) % count;
+        if (direction === "next") return (currentIndex + 1) % count;
+        if (direction === "previous") return (currentIndex - 1 + count) % count;
         return currentIndex;
-    }
-
-    function getJourneyProgress(activeIndex, count) {
-        if (count <= 1 || activeIndex <= 0) return 0;
-        return (activeIndex / (count - 1)) * 100;
     }
 
     function getAriaCurrent(href, activeHref) {
@@ -74,13 +68,11 @@
             .filter(function (record) { return Boolean(record.section); });
         const themeToggle = document.getElementById("themeToggle");
         const themeSlider = themeToggle ? themeToggle.querySelector(".theme-toggle-slider") : null;
-        const systemJourney = document.querySelector(".system-journey");
-        const stageTabs = Array.from(document.querySelectorAll('.journey-tab[role="tab"]'));
-        const stagePanel = document.getElementById("stageEvidence");
-        const stageNumber = document.getElementById("stageNumber");
-        const stageTitle = document.getElementById("stageTitle");
-        const stageDescription = document.getElementById("stageDescription");
-        const stageLinks = document.getElementById("stageLinks");
+        const capabilityCarousel = document.querySelector("[data-capability-carousel]");
+        const capabilityTrack = capabilityCarousel ? capabilityCarousel.querySelector(".capability-track") : null;
+        const capabilitySlides = capabilityTrack ? Array.from(capabilityTrack.querySelectorAll("[data-capability-slide]")) : [];
+        const capabilityPages = capabilityCarousel ? Array.from(capabilityCarousel.querySelectorAll("[data-slide-target]")) : [];
+        const capabilityControls = capabilityCarousel ? Array.from(capabilityCarousel.querySelectorAll("[data-capability-direction]")) : [];
 
         function prefersReducedMotion() {
             return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -112,54 +104,6 @@
             }
         }
 
-        function makeEvidenceLink(href, label) {
-            if (!href || !label) return null;
-            const link = document.createElement("a");
-            link.href = href;
-            link.textContent = label;
-            link.className = "journey-link";
-            if (/^https?:/.test(href)) {
-                link.target = "_blank";
-                link.rel = "noopener noreferrer";
-            }
-            return link;
-        }
-
-        function activateStage(tab, moveFocus) {
-            if (!tab || !stagePanel) return;
-
-            const activeIndex = stageTabs.indexOf(tab);
-            stageTabs.forEach(function (candidate, candidateIndex) {
-                const selected = candidate === tab;
-                candidate.classList.toggle("is-active", selected);
-                candidate.classList.toggle("is-complete", candidateIndex < activeIndex);
-                candidate.setAttribute("aria-selected", String(selected));
-                candidate.setAttribute("tabindex", selected ? "0" : "-1");
-            });
-
-            if (systemJourney) {
-                systemJourney.style.setProperty("--journey-progress", `${getJourneyProgress(activeIndex, stageTabs.length)}%`);
-            }
-
-            stagePanel.setAttribute("aria-labelledby", tab.id);
-            stagePanel.classList.remove("is-revealing");
-            void stagePanel.offsetWidth;
-
-            if (stageNumber) stageNumber.textContent = tab.dataset.index;
-            if (stageTitle) stageTitle.textContent = tab.dataset.title;
-            if (stageDescription) stageDescription.textContent = tab.dataset.description;
-            if (stageLinks) {
-                stageLinks.replaceChildren();
-                [
-                    makeEvidenceLink(tab.dataset.hrefOne, tab.dataset.linkOne),
-                    makeEvidenceLink(tab.dataset.hrefTwo, tab.dataset.linkTwo),
-                ].filter(Boolean).forEach(function (link) { stageLinks.appendChild(link); });
-            }
-
-            if (!prefersReducedMotion()) stagePanel.classList.add("is-revealing");
-            if (moveFocus) tab.focus({ preventScroll: true });
-        }
-
         function updateInterface() {
             const scrollY = window.scrollY || document.documentElement.scrollTop;
             const completion = getScrollProgress(
@@ -183,6 +127,30 @@
             });
         }
 
+        function getCapabilityIndex() {
+            if (!capabilityTrack || !capabilitySlides.length || !capabilityTrack.clientWidth) return 0;
+            return clamp(Math.round(capabilityTrack.scrollLeft / capabilityTrack.clientWidth), 0, capabilitySlides.length - 1);
+        }
+
+        function updateCapabilities() {
+            const activeIndex = getCapabilityIndex();
+            capabilityPages.forEach(function (page, index) {
+                const selected = index === activeIndex;
+                page.classList.toggle("is-active", selected);
+                if (selected) page.setAttribute("aria-current", "true");
+                else page.removeAttribute("aria-current");
+            });
+        }
+
+        function showCapability(index) {
+            if (!capabilityTrack || !capabilitySlides.length) return;
+            const targetIndex = clamp(index, 0, capabilitySlides.length - 1);
+            capabilityTrack.scrollTo({
+                left: targetIndex * capabilityTrack.clientWidth,
+                behavior: prefersReducedMotion() ? "auto" : "smooth",
+            });
+        }
+
         navLinks.forEach(function (link) {
             link.addEventListener("click", function (event) {
                 const target = document.querySelector(link.getAttribute("href"));
@@ -195,15 +163,41 @@
             });
         });
 
-        stageTabs.forEach(function (tab, index) {
-            tab.addEventListener("click", function () { activateStage(tab, false); });
-            tab.addEventListener("keydown", function (event) {
-                const nextIndex = getNextTabIndex(index, event.key, stageTabs.length);
-                if (nextIndex === index && !["Home", "End"].includes(event.key)) return;
-                event.preventDefault();
-                activateStage(stageTabs[nextIndex], true);
+        Array.from(document.querySelectorAll("[data-scroll-target]")).forEach(function (control) {
+            control.addEventListener("click", function () {
+                const target = document.querySelector(control.dataset.scrollTarget);
+                if (!target) return;
+                target.scrollIntoView({
+                    behavior: prefersReducedMotion() ? "auto" : "smooth",
+                    block: "start",
+                });
             });
         });
+
+        capabilityPages.forEach(function (page) {
+            page.addEventListener("click", function () {
+                showCapability(Number(page.dataset.slideTarget));
+            });
+        });
+
+        capabilityControls.forEach(function (control) {
+            control.addEventListener("click", function () {
+                showCapability(getNextSlideIndex(getCapabilityIndex(), control.dataset.capabilityDirection, capabilitySlides.length));
+            });
+        });
+
+        if (capabilityTrack) {
+            capabilityTrack.addEventListener("scroll", updateCapabilities, { passive: true });
+            capabilityCarousel.addEventListener("keydown", function (event) {
+                if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+                event.preventDefault();
+                showCapability(getNextSlideIndex(
+                    getCapabilityIndex(),
+                    event.key === "ArrowRight" ? "next" : "previous",
+                    capabilitySlides.length
+                ));
+            });
+        }
 
         if (themeToggle) {
             applyTheme(readTheme());
@@ -225,8 +219,7 @@
         }, { passive: true });
         window.addEventListener("resize", updateInterface);
 
-        const selectedTab = stageTabs.find(function (tab) { return tab.getAttribute("aria-selected") === "true"; });
-        activateStage(selectedTab || stageTabs[0], false);
+        updateCapabilities();
         updateInterface();
     }
 
@@ -234,8 +227,7 @@
         getScrollProgress: getScrollProgress,
         getActiveStage: getActiveStage,
         getActiveHref: getActiveHref,
-        getNextTabIndex: getNextTabIndex,
-        getJourneyProgress: getJourneyProgress,
+        getNextSlideIndex: getNextSlideIndex,
         getAriaCurrent: getAriaCurrent,
         init: init,
     };
