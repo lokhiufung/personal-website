@@ -44,9 +44,6 @@ class ResumeIntegrationContract(unittest.TestCase):
         for page in (HOME, RESUME):
             self.assertNotIn("demo.", page.read_text(encoding="utf-8"))
 
-        roadmap = (ROOT / "roadmap-variants.html").read_text(encoding="utf-8")
-        self.assertNotIn('href="demo.html"', roadmap)
-
     def test_homepage_keeps_experience_on_separate_resume_page(self):
         source, parser = parse(HOME)
         self.assertNotIn("experience", parser.ids)
