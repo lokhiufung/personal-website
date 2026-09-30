@@ -1232,6 +1232,8 @@ body.precision-console {
         scrollbar-width: none;
     }
 
+    .precision-console:has(#home) nav { overflow-x: clip; }
+
     .precision-console .nav-links::-webkit-scrollbar { display: none; }
     .precision-console .nav-link { padding-inline: 11px; white-space: nowrap; }
     .precision-console .theme-toggle { margin-inline: 5px 10px; }
