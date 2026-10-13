@@ -1,3 +1,4 @@
+import json
 from html.parser import HTMLParser
 from pathlib import Path
 import subprocess
@@ -168,6 +169,85 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
         self.assertEqual(parse_qs(url.query).get("subject"),
                          ["Trading-system project enquiry"])
 
+    def test_contact_form_collects_required_goals_and_setup_with_optional_details(self):
+        contact = one(self.page, id="contact")
+        self.assertEqual(one(contact, tag="h2").text(),
+                         "What do you want built or fixed?")
+        form = one(contact, tag="form", id="contactForm")
+        controls = {control.attrs.get("name"): control
+                    for control in form.find_all()
+                    if control.tag in ("input", "textarea")}
+        self.assertEqual(set(controls), {
+            "name", "email", "project", "current-setup", "timeline", "budget"
+        })
+        for name in ("name", "email", "project", "current-setup"):
+            with self.subTest(required=name):
+                self.assertIn("required", controls[name].attrs)
+        self.assertEqual(controls["email"].attrs.get("type"), "email")
+        for name in ("timeline", "budget"):
+            with self.subTest(optional=name):
+                self.assertNotIn("required", controls[name].attrs)
+        self.assertEqual(one(form, tag="button").text(), "Open email draft")
+        self.assertEqual(
+            one(contact, tag="a", class_name="email-link").attrs["href"],
+            "mailto:lokhiufung123@gmail.com",
+        )
+
+    def test_valid_contact_submission_opens_encoded_build_or_review_draft(self):
+        values = {
+            "name": "Ada Example",
+            "email": "ada@example.com",
+            "project": "Build an IBKR execution dashboard & alerts",
+            "current-setup": "Python 3.12 + IB Gateway; reconnect fails",
+            "timeline": "Within 6 weeks",
+            "budget": "About USD 4,000",
+        }
+        script = r"""
+const fs = require("fs");
+const vm = require("vm");
+const values = JSON.parse(process.argv[1]);
+let submitHandler;
+const form = { addEventListener(type, handler) {
+    if (type === "submit") submitHandler = handler;
+} };
+const document = {
+    querySelector() { return null; },
+    querySelectorAll() { return []; },
+    getElementById(id) { return id === "contactForm" ? form : null; },
+    body: { scrollTop: 0 },
+    documentElement: { scrollTop: 0, scrollHeight: 0, clientHeight: 0 }
+};
+const window = { location: {}, addEventListener() {}, scrollY: 0 };
+class FormData {
+    get(name) { return values[name] || ""; }
+}
+vm.runInNewContext(fs.readFileSync("assets/js/trading-infra.js", "utf8"),
+    { document, window, FormData, encodeURIComponent });
+let prevented = false;
+submitHandler({ preventDefault() { prevented = true; } });
+process.stdout.write(JSON.stringify({ prevented, href: window.location.href }));
+"""
+        result = subprocess.run(
+            ["node", "-e", script, json.dumps(values)],
+            cwd=ROOT, check=True, capture_output=True, text=True,
+        )
+        output = json.loads(result.stdout)
+        self.assertTrue(output["prevented"])
+        draft = urlsplit(output["href"])
+        self.assertEqual(draft.scheme, "mailto")
+        self.assertEqual(unquote(draft.path), "lokhiufung123@gmail.com")
+        query = parse_qs(draft.query)
+        subject = query.get("subject", [""])[0].lower()
+        self.assertIn("build", subject)
+        self.assertIn("review", subject)
+        body = query.get("body", [""])[0]
+        for value in values.values():
+            with self.subTest(value=value):
+                self.assertIn(value, body)
+        self.assertIn("Current setup:", body)
+        self.assertIn("Timeline:", body)
+        self.assertIn("Approximate budget:", body)
+
     def test_existing_content_and_other_enquiries_are_preserved(self):
         base_source = subprocess.check_output(
             ["git", "show", BASE + ":services/trading-infrastructure-engineering.html"],
@@ -193,7 +273,6 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
 
         selectors = [
             ("id", "packages"),
-            ("id", "contact"),
             ("class_name", "trust-note"),
             ("aria-label", "Service disclaimer"),
             ("class_name", "site-nav"),
