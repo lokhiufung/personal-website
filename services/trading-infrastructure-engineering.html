@@ -321,10 +321,10 @@
             <div class="container contact-grid">
                 <div>
                     <p class="section-label">Contact</p>
-                    <h2>Need help stabilizing your trading system?</h2>
+                    <h2>What do you want built or fixed?</h2>
                     <p>
-                        Send a short description of what you are building, the failure mode you are seeing, and what you
-                        want to improve.
+                        Tell me about a new system you want built or an existing setup that needs attention. Submitting
+                        opens an email draft in your mail app; review and send it there.
                     </p>
                     <a class="email-link" href="mailto:lokhiufung123@gmail.com">lokhiufung123@gmail.com</a>
                 </div>
@@ -340,19 +340,24 @@
                         <input type="email" id="contact-email" name="email" autocomplete="email" required>
                     </div>
                     <div class="form-row">
-                        <label for="contact-building">What are you building?</label>
-                        <input type="text" id="contact-building" name="project" required>
+                        <label for="contact-project">Project goals</label>
+                        <textarea id="contact-project" name="project" rows="4" required></textarea>
                     </div>
                     <div class="form-row">
-                        <label for="contact-problem">What problem are you facing?</label>
-                        <textarea id="contact-problem" name="problem" rows="5" required></textarea>
+                        <label for="contact-current-setup">Current setup</label>
+                        <textarea id="contact-current-setup" name="current-setup" rows="4" required></textarea>
                     </div>
                     <div class="form-row">
-                        <label for="contact-method">Preferred contact method</label>
-                        <input type="text" id="contact-method" name="preferred-contact"
-                            placeholder="Email, Discord, Telegram, or other">
+                        <label for="contact-timeline">Approximate timeline (optional)</label>
+                        <input type="text" id="contact-timeline" name="timeline"
+                            placeholder="e.g. within the next 6 weeks">
                     </div>
-                    <button type="submit" class="button button-primary">Contact me</button>
+                    <div class="form-row">
+                        <label for="contact-budget">Approximate budget (optional)</label>
+                        <input type="text" id="contact-budget" name="budget"
+                            placeholder="e.g. USD 2,000–5,000">
+                    </div>
+                    <button type="submit" class="button button-primary">Open email draft</button>
                 </form>
             </div>
         </section>
