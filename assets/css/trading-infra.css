@@ -475,6 +475,18 @@ main {
     margin-bottom: 18px;
 }
 
+.process-step .process-output {
+    border-top: 1px solid var(--border);
+    color: var(--muted-strong);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    padding-top: 14px;
+}
+
+.process-step .process-output strong {
+    color: var(--accent);
+}
+
 .service-card ul,
 .package-card ul {
     display: grid;
@@ -544,7 +556,7 @@ main {
 
 .process-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
 }
 
