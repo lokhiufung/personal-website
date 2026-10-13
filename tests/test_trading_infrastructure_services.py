@@ -157,6 +157,87 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
                               introduction.lower())
                 self.assertIn("support for existing systems", introduction.lower())
 
+    def test_inquiry_form_explains_the_email_draft_and_collects_required_details(self):
+        contact = one(self.page, id="contact")
+        self.assertIn("What do you want built or fixed?", [
+            heading.text() for heading in contact.find_all(tag="h2")
+        ])
+
+        form = one(contact, id="contactForm")
+        controls = {control.attrs.get("name"): control
+                    for control in form.find_all()
+                    if control.attrs.get("name")}
+        for name in ("name", "email", "project", "current-setup"):
+            with self.subTest(required_field=name):
+                self.assertIn(name, controls)
+                self.assertIn("required", controls[name].attrs)
+        self.assertEqual(controls["email"].attrs.get("type"), "email")
+        for name in ("timeline", "budget"):
+            with self.subTest(optional_field=name):
+                self.assertIn(name, controls)
+                self.assertNotIn("required", controls[name].attrs)
+
+        submit = one(form, tag="button")
+        self.assertEqual(submit.text(), "Open email draft")
+        self.assertTrue(any(
+            anchor.attrs.get("href") == "mailto:lokhiufung123@gmail.com"
+            for anchor in contact.find_all(tag="a")
+        ))
+
+    def test_submission_generates_an_encoded_draft_with_all_entered_values(self):
+        js_path = ROOT / "assets" / "js" / "trading-infra.js"
+        node_script = r'''
+const fs = require("fs");
+const vm = require("vm");
+const form = { handler: null, addEventListener: function (name, callback) {
+  if (name === "submit") this.handler = callback;
+}};
+const elements = { contactForm: form };
+const document = {
+  querySelector: function () { return null; },
+  querySelectorAll: function () { return []; },
+  getElementById: function (id) { return elements[id] || null; },
+  body: { scrollTop: 0 },
+  documentElement: { scrollTop: 0, scrollHeight: 0, clientHeight: 0 }
+};
+const values = {
+  name: "Alice Example",
+  email: "alice@example.com",
+  project: "Build a new test system",
+  "current-setup": "IB Gateway in Docker",
+  timeline: "Within 6 weeks",
+  budget: "USD 2,000–3,000",
+  "preferred-contact": "Signal"
+};
+class FormDataMock {
+  get(name) { return values[name] || ""; }
+}
+const window = { location: {}, addEventListener: function () {} };
+vm.runInNewContext(fs.readFileSync(process.argv[1], "utf8"), {
+  document, window, FormData: FormDataMock
+});
+form.handler({ preventDefault: function () {} });
+process.stdout.write(window.location.href);
+'''
+        draft = subprocess.check_output(
+            ["node", "-e", node_script, str(js_path)], cwd=ROOT, text=True)
+        parsed = urlsplit(draft)
+        self.assertEqual(parsed.scheme, "mailto")
+        self.assertEqual(unquote(parsed.path), "lokhiufung123@gmail.com")
+        query = parse_qs(parsed.query)
+        self.assertEqual(len(query.get("subject", [])), 1)
+        subject = query["subject"][0].lower()
+        self.assertIn("build", subject)
+        self.assertIn("review", subject)
+        body = query.get("body", [""])[0]
+        for value in (
+            "Alice Example", "alice@example.com", "Build a new test system",
+            "IB Gateway in Docker", "Within 6 weeks", "USD 2,000–3,000",
+            "Signal",
+        ):
+            with self.subTest(value=value):
+                self.assertIn(value, body)
+
     def test_hero_opens_project_email(self):
         hero = one(self.page, id="home")
         action = one(one(hero, class_name="hero-actions"), tag="a",
@@ -193,7 +274,6 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
 
         selectors = [
             ("id", "packages"),
-            ("id", "contact"),
             ("class_name", "trust-note"),
             ("aria-label", "Service disclaimer"),
             ("class_name", "site-nav"),

@@ -52,15 +52,28 @@
             var lines = [
                 "Name: " + (formData.get("name") || ""),
                 "Email: " + (formData.get("email") || ""),
-                "What are you building?",
+                "",
+                "Project goals:",
                 formData.get("project") || "",
                 "",
-                "What problem are you facing?",
-                formData.get("problem") || "",
-                "",
-                "Preferred contact method: " + (formData.get("preferred-contact") || "")
+                "Current setup:",
+                formData.get("current-setup") || ""
             ];
-            var subject = encodeURIComponent("Trading infrastructure technical review");
+            var timeline = formData.get("timeline");
+            var budget = formData.get("budget");
+            var preferredContact = formData.get("preferred-contact");
+
+            if (timeline) {
+                lines.push("", "Timeline: " + timeline);
+            }
+            if (budget) {
+                lines.push("Approximate budget: " + budget);
+            }
+            if (preferredContact) {
+                lines.push("Preferred contact method: " + preferredContact);
+            }
+
+            var subject = encodeURIComponent("Trading system build or technical review enquiry");
             var body = encodeURIComponent(lines.join("\n"));
 
             window.location.href = "mailto:lokhiufung123@gmail.com?subject=" + subject + "&body=" + body;
