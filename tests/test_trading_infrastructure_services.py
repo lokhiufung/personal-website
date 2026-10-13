@@ -102,9 +102,11 @@ def anchors_outside_action(root):
     hero = one(root, id="home")
     action = one(one(hero, class_name="hero-actions"), tag="a",
                  class_name="button-primary")
+    package_anchors = set(one(root, id="packages").find_all(tag="a"))
     return [
         (anchor.text(), tuple(sorted(anchor.attrs.items())))
-        for anchor in root.find_all(tag="a") if anchor is not action
+        for anchor in root.find_all(tag="a")
+        if anchor is not action and anchor not in package_anchors
     ]
 
 
@@ -168,6 +170,51 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
         self.assertEqual(parse_qs(url.query).get("subject"),
                          ["Trading-system project enquiry"])
 
+    def test_packages_publish_rates_scope_and_package_specific_inquiries(self):
+        packages = one(self.page, id="packages")
+        cards = packages.find_all(tag="article", class_name="package-card")
+        expected = {
+            "Starter Debug Session": {
+                "price": "US$150",
+                "deliverables": ("one issue", "60–90 minute",
+                                 "follow-up checklist"),
+            },
+            "System Health Check": {
+                "price": "US$600",
+                "deliverables": ("agreed components", "written findings",
+                                 "prioritized by importance"),
+            },
+            "Research Infrastructure Setup": {
+                "price": "US$1,200",
+                "deliverables": ("agreed data workflow",
+                                 "reproducible project setup"),
+            },
+        }
+        self.assertEqual(len(cards), len(expected))
+        self.assertEqual([one(card, tag="h3").text() for card in cards],
+                         list(expected))
+        self.assertNotIn("[insert price]", packages.text())
+
+        for card in cards:
+            name = one(card, tag="h3").text()
+            with self.subTest(package=name):
+                self.assertIn(name, expected)
+                text = card.text().lower()
+                self.assertIn(expected[name]["price"].lower(), text)
+                for phrase in expected[name]["deliverables"]:
+                    self.assertIn(phrase, text)
+
+                inquiry = one(card, tag="a")
+                url = urlsplit(inquiry.attrs["href"])
+                self.assertEqual(url.scheme, "mailto")
+                self.assertEqual(unquote(url.path), "lokhiufung123@gmail.com")
+                self.assertEqual(parse_qs(url.query).get("subject"), [name])
+
+        self.assertIn(
+            "Prices are in USD. Scope and deliverables are agreed before work begins.",
+            packages.text(),
+        )
+
     def test_existing_content_and_other_enquiries_are_preserved(self):
         base_source = subprocess.check_output(
             ["git", "show", BASE + ":services/trading-infrastructure-engineering.html"],
@@ -192,7 +239,6 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
                 )
 
         selectors = [
-            ("id", "packages"),
             ("id", "contact"),
             ("class_name", "trust-note"),
             ("aria-label", "Service disclaimer"),
