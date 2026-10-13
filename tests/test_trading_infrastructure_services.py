@@ -1,6 +1,5 @@
 from html.parser import HTMLParser
 from pathlib import Path
-import re
 import subprocess
 import unittest
 from urllib.parse import parse_qs, unquote, urlsplit
