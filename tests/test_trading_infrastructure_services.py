@@ -1,5 +1,6 @@
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 import subprocess
 import unittest
 from urllib.parse import parse_qs, unquote, urlsplit
@@ -167,6 +168,45 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
         self.assertEqual(unquote(url.path), "lokhiufung123@gmail.com")
         self.assertEqual(parse_qs(url.query).get("subject"),
                          ["Trading-system project enquiry"])
+
+    def test_process_explains_four_stages_and_both_engagement_paths(self):
+        process = one(self.page, id="process")
+        stages = one(process, class_name="process-grid").find_all(
+            tag="article", class_name="process-step")
+        self.assertEqual([one(stage, tag="h3").text() for stage in stages], [
+            "Discuss requirements",
+            "Agree scope and quote",
+            "Build or review",
+            "Validate and hand over",
+        ])
+
+        outputs = [one(stage, class_name="process-output").text()
+                   for stage in stages]
+        self.assertEqual(len(outputs), 4)
+        for output in outputs:
+            self.assertTrue(output.lower().startswith("output:"))
+
+        process_text = process.text().lower()
+        for phrase in (
+                "implementation project", "review engagement", "written findings",
+                "prioritized action plan", "agreed build", "handover materials"):
+            with self.subTest(phrase=phrase):
+                self.assertIn(phrase, process_text)
+
+        self.assertIn("#process", [anchor.attrs.get("href")
+                                    for anchor in self.page.find_all(tag="a")])
+
+    def test_process_grid_has_desktop_four_columns_and_mobile_stack(self):
+        stylesheet = (ROOT / "assets" / "css" / "trading-infra.css").read_text(
+            encoding="utf-8")
+        self.assertRegex(
+            stylesheet,
+            r"\.process-grid\s*\{[^}]*grid-template-columns:\s*repeat\(4,\s*minmax\(0,\s*1fr\)\)",
+        )
+        self.assertRegex(
+            stylesheet,
+            r"@media\s*\(max-width:\s*820px\)[\s\S]*?\.package-grid,\s*\.process-grid,\s*\.credibility-grid\s*\{\s*grid-template-columns:\s*1fr",
+        )
 
     def test_existing_content_and_other_enquiries_are_preserved(self):
         base_source = subprocess.check_output(
