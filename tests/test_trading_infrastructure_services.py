@@ -168,6 +168,33 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
         self.assertEqual(parse_qs(url.query).get("subject"),
                          ["Trading-system project enquiry"])
 
+    def test_contact_form_explains_build_or_fix_and_collects_scope(self):
+        contact = one(self.page, id="contact")
+        self.assertEqual(one(contact, tag="h2").text(),
+                         "What do you want built or fixed?")
+        form = one(contact, tag="form", id="contactForm")
+        fields = {field.attrs.get("name"): field
+                  for field in form.find_all()
+                  if field.tag in ("input", "textarea")}
+        for name in ("name", "email", "project", "current-setup"):
+            with self.subTest(required=name):
+                self.assertIn(name, fields)
+                self.assertIn("required", fields[name].attrs)
+        self.assertEqual(fields["email"].attrs.get("type"), "email")
+        for name in ("timeline", "budget"):
+            with self.subTest(optional=name):
+                self.assertIn(name, fields)
+                self.assertNotIn("required", fields[name].attrs)
+        self.assertEqual(one(form, tag="button").text(), "Open email draft")
+        self.assertEqual(one(contact, tag="a", class_name="email-link").attrs[
+            "href"], "mailto:lokhiufung123@gmail.com")
+
+    def test_form_handler_builds_encoded_draft_with_submitted_values(self):
+        result = subprocess.check_output(
+            ["node", "--test", "tests/trading_infra_form.test.js"],
+            cwd=ROOT, text=True)
+        self.assertIn("pass 2", result)
+
     def test_existing_content_and_other_enquiries_are_preserved(self):
         base_source = subprocess.check_output(
             ["git", "show", BASE + ":services/trading-infrastructure-engineering.html"],
@@ -193,7 +220,6 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
 
         selectors = [
             ("id", "packages"),
-            ("id", "contact"),
             ("class_name", "trust-note"),
             ("aria-label", "Service disclaimer"),
             ("class_name", "site-nav"),
