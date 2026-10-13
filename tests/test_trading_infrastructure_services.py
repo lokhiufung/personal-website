@@ -168,6 +168,56 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
         self.assertEqual(parse_qs(url.query).get("subject"),
                          ["Trading-system project enquiry"])
 
+    def test_packages_publish_rates_scope_and_package_specific_inquiries(self):
+        packages = one(self.page, id="packages")
+        cards = one(packages, class_name="package-grid").find_all(
+            tag="article", class_name="package-card")
+        expected = {
+            "Starter Debug Session": {
+                "price": "US$150",
+                "deliverables": ("one issue", "60–90 minutes",
+                                 "follow-up checklist"),
+                "subject": "Starter Debug Session enquiry",
+            },
+            "System Health Check": {
+                "price": "US$600",
+                "deliverables": ("agreed components", "written findings",
+                                 "prioritized by importance"),
+                "subject": "System Health Check enquiry",
+            },
+            "Research Infrastructure Setup": {
+                "price": "US$1,200",
+                "deliverables": ("agreed data workflow",
+                                 "reproducible project setup"),
+                "subject": "Research Infrastructure Setup enquiry",
+            },
+        }
+
+        self.assertEqual([one(card, tag="h3").text() for card in cards],
+                         list(expected))
+        for card in cards:
+            title = one(card, tag="h3").text()
+            with self.subTest(package=title):
+                details = expected[title]
+                self.assertIn(details["price"], card.text())
+                self.assertNotIn("[insert price]", card.text())
+                card_text = card.text().casefold()
+                for phrase in details["deliverables"]:
+                    self.assertIn(phrase.casefold(), card_text)
+
+                inquiry = one(card, tag="a")
+                url = urlsplit(inquiry.attrs["href"])
+                self.assertEqual(url.scheme, "mailto")
+                self.assertEqual(unquote(url.path), "lokhiufung123@gmail.com")
+                self.assertEqual(parse_qs(url.query).get("subject"),
+                                 [details["subject"]])
+
+        self.assertNotIn("[insert price]", PAGE.read_text(encoding="utf-8"))
+        self.assertIn(
+            "Prices are in USD. Scope and deliverables are agreed before work begins.",
+            packages.text(),
+        )
+
     def test_existing_content_and_other_enquiries_are_preserved(self):
         base_source = subprocess.check_output(
             ["git", "show", BASE + ":services/trading-infrastructure-engineering.html"],
@@ -192,7 +242,6 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
                 )
 
         selectors = [
-            ("id", "packages"),
             ("id", "contact"),
             ("class_name", "trust-note"),
             ("aria-label", "Service disclaimer"),
@@ -212,8 +261,15 @@ class TradingInfrastructureServicesContract(unittest.TestCase):
                 self.assertEqual(element_snapshot(base_target),
                                  element_snapshot(current_target))
 
-        self.assertEqual(anchors_outside_action(base_page),
-                         anchors_outside_action(self.page))
+        current_anchors = anchors_outside_action(self.page)
+        current_anchors = [
+            anchor for anchor in current_anchors
+            if not any(subject in dict(anchor[1]).get("href", "")
+                       for subject in ("Starter%20Debug%20Session%20enquiry",
+                                       "System%20Health%20Check%20enquiry",
+                                       "Research%20Infrastructure%20Setup%20enquiry"))
+        ]
+        self.assertEqual(anchors_outside_action(base_page), current_anchors)
 
         ids = {element.attrs["id"] for element in self.page.find_all()
                if element.attrs.get("id")}
